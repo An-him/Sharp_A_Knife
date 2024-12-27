@@ -1,6 +1,6 @@
-# 🛠️ Knife Sharpening Co. API
+# 🛠️ Sharp-A-Knife Co. API
 
-Welcome to the **Knife Sharpening Co. API**! This application provides a platform to manage knife sharpening orders, customer profiles, and pricing information. Follow the instructions below to set up and run the app locally.
+Welcome to the **Sharp-A-Knife Co. API**! This application provides a platform to manage knife sharpening orders, customer profiles, and pricing information. Follow the instructions below to set up and run the app locally.
 
 ---
 
@@ -37,12 +37,12 @@ Before running the app, ensure you have the following installed on your system:
 
 | **METHOD** | **ROUTE**                 | **FUNCTIONALITY**                     | **ACCESS**      |
 |------------|---------------------------|---------------------------------------|-----------------|
-| `POST`     | `/auth/signup`            | Register new User         | Public          |
+| `POST`     | `/auth/signup`            | Register new User         | Public    |
 | `POST`     | `/auth/login`             | User login and authentication         | Public          |
 | `POST`     | `/customers/register`     | Register a new customer               | Public          |
 | `GET`      | `/customers/{customer_id}`| Retrieve customer details             | Authenticated   |
 | `POST`     | `/orders`                 | Create a new sharpening order         | Authenticated   |
-| `GET`      | `/orders/{order_id}/status`| Check order status                    | Authenticated   |
+| `GET`      | `/orders/{order_id}/status`| Check order status                   | Authenticated   |
 | `GET`      | `/pricing`                | Retrieve service pricing              | Public          |
 
 ---
