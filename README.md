@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🛠️ Sharp-A-Knife Co. API
 
 Welcome to the **Sharp-A-Knife Co. API**! This application provides a platform to manage knife sharpening orders, customer profiles, and pricing information. Follow the instructions below to set up and run the app locally.
@@ -52,6 +53,3 @@ Before running the app, ensure you have the following installed on your system:
 - **Access Levels**:
   - **Public**: No authentication required.
   - **Authenticated**: Requires a valid authentication token.
-
-- Use the base URL:
-
