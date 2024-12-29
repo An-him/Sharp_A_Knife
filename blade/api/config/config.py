@@ -18,13 +18,18 @@ class Config():
 class DevConfig(Config):
     DEBUG=config('DEBUG',cast=bool)
     SQLALCHEMY_ECHO=True
+    SQLALCHEMY_TRACK_MODIFICATIONS=False
     SQLALCHEMY_DATABASE_URI='sqlite:///'+os.path.join(BASEDIR,'dev.db')
 
 class ProdConfig(Config):
     pass
 
 class TestConfig(Config):
-    pass
+    TESTING=True
+    SQLALCHEMY_DATABASE_URI='sqlite://' # In memory database
+    SQLALCHEMY_TRACK_MODIFICATIONS=False
+    SQLALCHEMY_ECHO=True
+    
 
 
 config_dict={
