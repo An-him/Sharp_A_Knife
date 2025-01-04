@@ -324,7 +324,7 @@ header.sticky {
 	opacity: 1;
 	visibility: visible;
 	z-index: 99999;
-	background-color: #fff;
+	background-color: black;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 header::before {
@@ -366,7 +366,7 @@ header.v2 .header-logo {
 }
 ul.main-menu li a {
 	font-size: 16px;
-	color: #000000;
+	color: white;
 	text-transform: capitalize;
 	font-weight: 500;
 	line-height: 32px;
@@ -386,7 +386,7 @@ ul.main-menu>li:first-child {
 	margin-left: 0;
 }
 ul.main-menu li a:hover {
-	color: #003769;
+	color: #e35125;
 }
 ul.main-menu li.sub-menu-wrap a {
 	padding-right: 15px !important;
@@ -906,7 +906,7 @@ ul.main-menu li:hover ul.sub-menu {
 ================================================
 */
 .home-service {
-	background: url(../images/cta-bg.jpg) center center no-repeat;
+	/* background: url(../images/cta-bg.jpg) center center no-repeat; */
 	background-size: cover;
 	position: relative;
 	z-index: 2;
@@ -919,7 +919,7 @@ ul.main-menu li:hover ul.sub-menu {
 	width: 100%;
 	height: 100%;
 	background: black;
-	opacity: 0.3;
+	opacity: 1;
 	z-index: -1;
 }
 .home-service .part-txt h3 {
@@ -1510,7 +1510,7 @@ ul.main-menu li:hover ul.sub-menu {
 */
 .fun-fact {
 	padding: 90px 0;
-	background: url(../images/cta-bg.jpg) center center no-repeat;
+	/* background: url(../images/cta-bg.jpg) center center no-repeat; */
 	background-size: cover;
 	position: relative;
 	z-index: 2;
@@ -1523,7 +1523,7 @@ ul.main-menu li:hover ul.sub-menu {
 	width: 100%;
 	height: 100%;
 	background: black;
-	opacity: 0.3;
+	opacity: 1;
 	z-index: -1;
 }
 .fun-fact .single-box {
@@ -2599,7 +2599,7 @@ ul.main-menu li:hover ul.sub-menu {
 */
 .footer-sec {
 	background-color: transparent;
-	background-image: url("../images/cta-bg.jpg");
+	/* background-image: url("../images/cta-bg.jpg"); */
 	background-position: center top;
 	background-size: cover;
 	position: relative;
@@ -2608,7 +2608,7 @@ ul.main-menu li:hover ul.sub-menu {
 .footer-sec:before {
 	/* background: #003561; */
 	background: black;
-	opacity: 0.3;
+	opacity: 1;
 	bottom: 0;
 	content: "";
 	height: 100%;
@@ -2827,7 +2827,7 @@ ul.main-menu li:hover ul.sub-menu {
 	transition: all .3s ease;
 }
 .copyright {
-	background: #0a4173;
+	background: #e35125;
 	color: #fff;
 	padding: 15px 0px;
 	float: left;
