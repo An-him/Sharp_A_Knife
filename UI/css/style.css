@@ -767,7 +767,7 @@ ul.main-menu li:hover ul.sub-menu {
 7. Our Features
 ================================================
 */
-/** Single Feeatues Sec **/
+/** Single Featues Sec **/
 .features-sec .single-feature-sec {
 	position: relative;
 	-webkit-box-shadow: 0px 8px 16px 0px rgba(73, 167, 211, 0.1);
@@ -810,6 +810,119 @@ ul.main-menu li:hover ul.sub-menu {
 	-webkit-transform: translateY(-15px);
 	transform: translateY(-15px);
 }
+/*
+================================================
+8. Place an order Sec
+================================================
+*/
+.place-order{
+	background: black;
+}
+.place-order .container .row .image{
+	width: 50%;
+}
+.place-order .container .row .image img{
+	width: 100%;
+}
+.order-container{
+	width: 50%;
+	padding: 30px;
+	font-family: 'Poppins', sans-serif;
+	box-shadow: 2px 9px 35px #0000001a;
+	/* border-radius: 30px; */
+	background: white;
+}
+.knife-selection {
+	text-align: left;
+	margin: 20px;
+	font-size: 1.5rem;
+  }
+  
+  #knifeRange {
+	width: 100%;
+	margin: 10px 0;
+	-webkit-appearance: none;
+	appearance: none;
+	background: #ddd;
+	height: 8px;
+	border-radius: 5px;
+	outline: none;
+	transition: background 0.3s;
+  }
+  
+  #knifeRange::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #ff6600;
+	cursor: pointer;
+	transition: background 0.3s;
+  }
+  
+  #knifeRange::-moz-range-thumb {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #ff6600;
+	cursor: pointer;
+	transition: background 0.3s;
+  }
+  
+  #knifeRange:hover {
+	background: #ccc;
+  }
+  
+  #knifeRange::-webkit-slider-thumb:hover {
+	background: #ff4500;
+  }
+  
+  #knifeRange::-moz-range-thumb:hover {
+	background: #ff4500;
+  }
+  
+  .knife-count {
+	font-size: 1em;
+	margin: 10px 5px 0 0;
+	text-align: center;
+  }
+  .knife-count-number {
+	color: #e35125;
+  }
+  .range-numbers {
+	display: flex;
+	justify-content: space-between;
+	width: 110%;
+	font-size: 0.6em;
+	color: black;
+  }
+  
+  .range-numbers span {
+	flex: 1;
+  }
+  .order-btn{
+	margin: 20px
+  }
+  .slider-btn-order{
+	display: inline-block;
+	position: relative;
+	border-radius: 0%;
+	width: 70%;
+	margin:0 0 0 0;
+  }
+  .slider-btn-order:hover{
+	margin-top: -50px;
+	margin-left: 0px;
+}
+.btn.ss-btn.order{
+	width: 100%;
+}
+.price{
+	font-size: 1.5rem;
+}
+  
+  
 /*
 ================================================
 8. About Sec
