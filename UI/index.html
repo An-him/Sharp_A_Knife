@@ -225,7 +225,7 @@
 </section>
 <!-- Features Sec End -->
 <!-- Place Order Start-->
-<section class="place-order">
+<section class="place-order" id="place-order">
   <div class="container">
     <div class="row">
       <!--Order Image-->
@@ -235,10 +235,8 @@
       <div class="order-container">
         <div class="knife-selection">
           <label for="knifeRange">How Many Knives?</label><br ><br ><br >
-          <input type="range" id="knifeRange" name="knifeRange" min="1" max="10" value="5" step="1" oninput="updateKnifeCount(this.value)">
+          <input type="range" id="knifeRange" name="knifeRange" min="3" max="15" value="5" step="1" oninput="updateKnifeCount(this.value)">
           <div class="range-numbers">
-            <span>1</span>
-            <span>2</span>
             <span>3</span>
             <span>4</span>
             <span>5</span>
@@ -247,6 +245,11 @@
             <span>8</span>
             <span>9</span>
             <span>10</span>
+            <span>11</span>
+            <span>12</span>
+            <span>13</span>
+            <span>14</span>
+            <span>15</span>
           </div><br ><br >
           <div class="knife-count">
             <span id="knifeCount" class="knife-count-number">5</span> Knives
@@ -254,7 +257,7 @@
         </div><br ><br ><br >
         <div class="row order-btn">
           <div class="col-lg-3 order-price">
-            <div class="price">50 Ksh</div>
+            <span class="price" id="price">50 </span> Ksh
             <div>10 Ksh/Knife</div>
         </div>
         <div class="slider-btn-order"> <a href="#services" class="btn ss-btn order">Place Order</a>
@@ -286,7 +289,7 @@
             </ul>
           </div>
         </div>
-        <a href="javascript:void(0)" class="default-btn btn"> Read More </a> </div>
+        <a href="#place-order" class="default-btn btn"> Place Order </a> </div>
     </div>
     <div class="col-lg-6">
       <div class="about-imgwrap">
@@ -309,7 +312,7 @@
         <div class="part-txt text-center">
           <h3>Robust & Reliable Knife Sharpening Services</h3>
           <h2>Benefits Of a Partner</h2>
-          <p>You never have to wait for the person on the street that you are not sure about, by getting in touch with us we guarantee total satisfaction to your exxpectations. </p>
+          <p>You never have to wait for the person on the street that you are not sure about, by getting in touch with us we guarantee total satisfaction to your expectations. </p>
           <a class="def-btn btn" href="#footer">Contact Us</a> </div>
       </div>
     </div>
@@ -1162,7 +1165,9 @@
 <!-- Odometer js --> 
 <script src="js/odometer.min.js"></script>
 <!--jquery js --> 
-<script src="js/custom.js"></script> 
+<script src="js/custom.js"></script>
+<!--placeOrder js --> 
+<script src="js/placeOrder.js"></script> 
 
 </body>
 
