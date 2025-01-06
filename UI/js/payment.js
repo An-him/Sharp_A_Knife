@@ -15,7 +15,7 @@ $(document).ready(function() {
       // Perform AJAX request
       $.ajax({
         type: 'POST',
-        url: '/process_checkout', // Replace with your server endpoint
+        url: 'http://localhost:5000/orders/orders/', // Replace with your server endpoint
         data: formData,
         success: function(response) {
           // Handle success response
