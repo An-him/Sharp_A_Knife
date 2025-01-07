@@ -3353,7 +3353,7 @@ header::before {
   }
   
   .toggle-btn.active {
-	background-color: #007bff;
+	background-color:  #e35125;
 	color: #fff;
   }
   
@@ -3378,7 +3378,7 @@ header::before {
   }
   
   .auth-submit {
-	background-color: #007bff;
+	background-color:  #e35125;
 	color: white;
 	border: none;
 	padding: 10px;
@@ -3388,6 +3388,6 @@ header::before {
   }
   
   .auth-submit:hover {
-	background-color: #0056b3;
+	background-color:rgb(138, 53, 28);
   }
   
