@@ -3188,3 +3188,108 @@ header::before {
 	margin-right: 25px;
 }
 }
+/*
+================================================
+18.  Payment
+================================================
+*/
+/* Container */
+.main{
+	margin: 0 14% 0 14%
+}
+.container-payment {
+	max-width: 800px;
+	padding: 20px;
+	background-color: #f2f2f2;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	width: 50%;
+	max-height: 600px;
+	overflow: auto;
+  }
+  
+  /* Form Sections */
+  .section-payment {
+	margin-bottom: 20px;
+  }
+  
+  /* Form Headings */
+  h2, h3 {
+	margin-bottom: 10px;
+  }
+  
+  /* Labels and Inputs */
+  label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+  }
+  
+  /* Row for Multiple Columns */
+  .row-payment {
+	display: flex;
+	justify-content: space-between;
+  }
+  
+  .col-50 {
+	flex: 0 0 48%;
+  }
+  
+  /* Submit Button */
+  .btn {
+	width: 100%;
+	padding: 15px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+  }
+  
+  .btn:hover {
+	background-color: #45a049;
+  }
+  .order-to-pay{
+	padding: 20px
+  }
+  .order-title{
+	text-decoration: underline;
+	margin-bottom: 50px;
+  }
+
+  .knives-price{
+	float: right;
+	margin-left: 100px;
+  }
+  .bi-cart-check-fill{
+	color:#e35125;
+	margin: 0 10px;
+	font-size: 60px;
+  }
+  .row.bill{
+	align-items: center;
+	font-size: 18px;
+	margin-bottom: 100px;
+  }
+  .row.total{
+	margin: auto;
+	align-items: baseline;
+	font-weight: 900;
+	font-size: x-large;
+  }
+  .knives-total{
+	float: left;
+	margin-left: 300px;
+  }
