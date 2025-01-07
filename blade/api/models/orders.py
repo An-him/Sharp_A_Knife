@@ -17,12 +17,17 @@ class Service(Enum):
 class Order(db.Model):
     __tablename__ = 'orders'
     id=db.Column(db.Integer(), primary_key=True)
+    fullname=db.Column(db.String(255), nullable=False)
+    email=db.Column(db.String(255), nullable=False)
+    street=db.Column(db.String(255), nullable=False)
+    appartment_name=db.Column(db.String(255), nullable=False)
+    block=db.Column(db.String(255), nullable=True)
+    House_number=db.Column(db.String(255), nullable=False)
+    phone_number=db.Column(db.String(255), nullable=False)
+    quantity=db.Column(db.Integer(), nullable=False)
     order_status=db.Column(db.Enum(OrderStatus),default=OrderStatus.BLUNT)
-    service=db.Column(db.Enum(Service),default=Service.WHETTING, nullable=False)
     quantity=db.Column(db.Integer(),default=3,nullable=False)
-    total=db.Column(db.Float(), nullable=True)
     date_created_at=db.Column(db.DateTime(),default=datetime.utcnow)
-
     user_id=db.Column(db.Integer(), db.ForeignKey('users.id'))
 
     def __repr__(self):

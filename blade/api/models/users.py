@@ -7,7 +7,7 @@ class User(db.Model):
     __tablename__ = 'users'
 
     id=db.Column(db.Integer(), primary_key=True)
-    username=db.Column(db.String(255),nullable=False)
+    fullname=db.Column(db.String(255),nullable=False)
     email=db.Column(db.String(255),nullable=False,unique=True)
     password_hash=db.Column(db.Text(),nullable=False)
     location=db.Column(db.Text(),nullable=True)
@@ -20,7 +20,7 @@ class User(db.Model):
 
 
     def __repr__(self):
-          return f"<User {self.username}>"
+          return f"<User {self.fullname}>"
 
 
     def save_user(self):
