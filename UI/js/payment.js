@@ -21,6 +21,7 @@ $(document).ready(function() {
         expyear: $('#expyear').val(),
         cvv: $('#cvv').val(),
     };
+    $('#contact-btn').text("Processing...");
 
     $.ajax({
         type: 'POST',
@@ -28,9 +29,13 @@ $(document).ready(function() {
         data: formData,
         success: function(response) {
             alert('Payment successful!');
+            $('#payment-btn').text("Payemnt Successful!");
+            $('#payment-btn').css("color","green");
         },
         error: function(error) {
-            alert('An error occurred during checkout. Please try again.'); 
+            alert('An error occurred during checkout. Please try again.');
+            $('#payment-btn').text("Something went wrong");
+            $('#payment-btn').css("color","yellow"); 
         }
       });
     });

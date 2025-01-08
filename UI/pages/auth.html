@@ -22,26 +22,6 @@
 <body>
 <!-- Pre Loader -->
 <div id="dvLoading"></div>
- <!-- Start Topbar -->
- <div class="top-bar">
-    <div class="container">
-      <ul class="left-bar">
-        <li><a href=""><i class="fa fa-map-marker"></i> 1 KN 78 St Kenya, KN</a></li>
-        <li><a href="mailto:info@sharpaknife.com"><i class="fa fa-envelope"></i> info@sharpaknife.com</a></li>
-        <li><a href="tel:+250784555553"><i class="fa fa-phone"></i> +254 115 001965</a></li>
-      </ul>
-      <div class="top-right-nav text-right d-none d-md-block">
-        <ul>
-          <li><a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-          <li><a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-          <li><a href="https://www.linkedin.com/company/edali-epc-ltd/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-          <li><a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-          <li><a href="javascript:void(0);"><i class="fa fa-telegram" aria-hidden="true"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!-- End Topbar --> 
   <!-- Header Area -->
 <header style="background-color: black;">
     <div class="container" >
@@ -96,89 +76,29 @@
   </header>
   <!-- Header Area end -->
   <!-- main-area -->
-  <div class="main">
-    <div class="row">
-      <div class="container-payment">
-        <!-- Checkout Form-->
-        <form id="checkout-form-payment">
-          <h2>Checkout Form</h2>
-          
-          <!-- Personal Information -->
-          <div class="section-payment">
-            <h3>Personal Information</h3>
-            <label for="fname">Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="John M. Doe" required>
-            
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="john@example.com" required>
-          </div>
-          
-          <!-- Address Details -->
-          <div class="section-payment">
-            <h3>Address</h3>
-            <label for="address">Address</label>
-            <input type="text" id="address" name="address" placeholder="542 W. 15th Street" required>
-            
-            <label for="city">City</label>
-            <input type="text" id="city" name="city" placeholder="New York" required>
-            
-            <div class="row-payment">
-              <div class="col-50">
-                <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="NY" required>
-              </div>
-              <div class="col-50">
-                <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" placeholder="10001" required>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Payment Information -->
-          <div class="section-payment">
-            <h3>Payment</h3>
-            <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe" required>
-            
-            <label for="ccnum">Credit Card Number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required>
-            
-            <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="September" required>
-            
-            <div class="row-payment">
-              <div class="col-50">
-                <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2025" required>
-              </div>
-              <div class="col-50">
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352" required>
-              </div>
-            </div>
-          </div>
-          <!-- Submit Button -->
-          <input type="submit" id:"payment-btn" value="PAY" class="btn">
-        </form>
-      </div>
-      <div class="order-to-pay">
-        <h2 class="order-title">Your Order</h2>
-        <div class="row bill">
-          <i class="bi bi-cart-check-fill"></i>
-          <div class="col-ls-3">
-            <h5>Appointment to Sharpen</h5>
-            <span class="number-knives" id="number-knives">3</span> knives 
-        </div>
-        <div class="knives-price" id="knives-price">30 </div> Ksh
-      </div>
-      <div class="row total">
-        <div class="">
-          <div>Total</div>
-      </div>
-      <div class="knives-total" id="knives-total">30 </div> Ksh
+  <div class="authorization" style="background-image:url(../images/knife-sharpener\ 110726611.webp)"> 
+  <div class="auth-container">
+    <div class="auth-toggle">
+      <button id="login-btn" class="toggle-btn active">Log In</button>
+      <button id="signup-btn" class="toggle-btn">Sign Up</button>
     </div>
-    </div>
+    <form id="login-form" class="auth-form">
+      <h2>Log In</h2>
+      <input type="email" id="login-email" placeholder="Email" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <button type="submit" class="auth-submit">Log In</button>
+    </form>
+    <form id="signup-form" class="auth-form hidden">
+      <h2>Sign Up</h2>
+      <input type="text" id="signup-name" placeholder="Full Name" required>
+      <input type="email" id="signup-email" placeholder="Email" required>
+      <input type="password" id="signup-password" placeholder="Password" required>
+      <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+      <button type="submit" class="auth-submit">Sign Up</button>
+    </form>
   </div>
+</div>
+</div>
 
 
   <!--jquery js --> 
@@ -205,6 +125,6 @@
 <!--jquery library-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--payment js --> 
-<script src="../js/payment.js"></script> 
+<script src="../js/auth.js"></script> 
 </body>
 </html>
