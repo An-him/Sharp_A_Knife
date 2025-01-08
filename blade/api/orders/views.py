@@ -15,10 +15,13 @@ order_model=order_namespace.model(
         'id':fields.Integer(description='An ID'),
         'quantity':fields.Integer(required=False,description='Quantity of the order'),
         'fullname':fields.String(required=True,description='Fullname of the client'),
-        'service':fields.String(required=True,description='Service to be provided'),
-        'date_created_at':fields.DateTime(description='Date created'),
-        'order_status':fields.String(description='Status of the order',
-            enum=['BLUNT','WHETTING','SHARPENING','SHARP']),
+        'email':fields.String(required=True,description='Email of the client'),
+        'street':fields.String(required=True,description='Street of the client'),
+        'appartment_name':fields.String(required=True,description='Appartment name of the client'),
+        'block':fields.String(required=True,description='Block of the client'),
+        'House_number':fields.String(required=True,description='House number of the client'),
+        'phone_number':fields.String(required=True,description='Phone number of the client'),
+        
     }
 )
 
