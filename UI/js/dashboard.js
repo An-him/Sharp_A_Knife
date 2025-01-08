@@ -11,7 +11,7 @@ var requestOptions = {
     redirect: 'follow'
   };
   
-  fetch("http://localhost:5000/server/users", requestOptions)
+  fetch("http://localhost:5000/users", requestOptions)
   .then(response => response.text())
   .then(result => {console.log(result), localStorage.setItem('signupData', result)})
   .catch(error => console.log('error', error));
