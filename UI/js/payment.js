@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     $.ajax({
         type: 'POST',
-        url:  'https://team-furebo-e-commerce-bn.onrender.com/api/login',
+        url:  'http://localhost:5000/orders/orders/',
         data: JSON.stringify(formData),
         contentType: 'application/json',
         success: function(response) {
