@@ -22,12 +22,12 @@ $(document).ready(function() {
     
         $.ajax({
             type: 'POST',
-            url:  'https://team-furebo-e-commerce-bn.onrender.com/api/login',
+            url:  'http://localhost:5000/auth/login',
             data: JSON.stringify(formData),
             contentType: 'application/json',
             success: function(response) {
                 alert('login successful!');
-                locatiop.href = "dashboard.html"
+                location.href = "dashboard.html"
             },
             error: function(error) {
                 alert('An error occurred during checkout. Please try again.'); 
@@ -41,12 +41,11 @@ $(document).ready(function() {
             fullname: $('#signup-name').val(),
             email: $('#signup-email').val(),
             password: $('#signup-password').val(),
-            cpassword: $('#signup-confirm-password').val(),
         };
     
         $.ajax({
             type: 'POST',
-            url:  'https://team-furebo-e-commerce-bn.onrender.com/api/signup',
+            url:  'http://localhost:5000/auth/signup',
             
             data: JSON.stringify(formData),
             contentType: 'application/json',
