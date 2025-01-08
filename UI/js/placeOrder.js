@@ -24,7 +24,7 @@ function updateKnifeCount(value) {
 
       $.ajax({
           type: 'POST',
-          url:  'https://team-furebo-e-commerce-bn.onrender.com/api/login',
+          url:  'https://localhost:5000/orders/orders',
           data: JSON.stringify(formData),
           contentType: 'application/json',
           success: function(response) {
