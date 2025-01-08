@@ -24,11 +24,7 @@ class Order(db.Model):
     block=db.Column(db.String(255), nullable=True)
     House_number=db.Column(db.String(255), nullable=False)
     phone_number=db.Column(db.String(255), nullable=False)
-    quantity=db.Column(db.Integer(), nullable=False)
-    order_status=db.Column(db.Enum(OrderStatus),default=OrderStatus.BLUNT)
     quantity=db.Column(db.Integer(),default=3,nullable=False)
-    date_created_at=db.Column(db.DateTime(),default=datetime.utcnow)
-    user_id=db.Column(db.Integer(), db.ForeignKey('users.id'))
 
     def __repr__(self):
         return f'<Order {self.id}>'
