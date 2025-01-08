@@ -17,22 +17,20 @@ auth_namespace = Namespace(
 signUp_model = auth_namespace.model(
     'SignUp', {
         'id': fields.Integer(),
-        'username': fields.String(required=True, description="A Username"),
+        'fullname': fields.String(required=True, description="A Username"),
         'email': fields.String(required=True, description="An Email Address"),
-        'password_hash': fields.String(required=True,
-                                       description="A Password"),
+        'password': fields.String(required=True,
+                                  description="A Password"),
     }
 )
 
 user_model = auth_namespace.model(
     'User', {
         'id': fields.Integer(),
-        'username': fields.String(required=True, description="A Username"),
+        'fullname': fields.String(required=True, description="A Username"),
         'email': fields.String(required=True, description="An Email Address"),
-        'password_hash': fields.String(required=True,
+        'password': fields.String(required=True,
                                        description="A Password"),
-        'is_staff': fields.Boolean(description="Shows User Is Staff"),
-        'is_active': fields.Boolean(description="Shows User Active"),
     }
 )
 
@@ -57,9 +55,9 @@ class SignUp(Resource):
 
         try:
             new_user = User(
-                username=data.get('username'),
+                fullname=data.get('fullname'),
                 email=data.get('email'),
-                password_hash=generate_password_hash(data.get('password')),
+                password=generate_password_hash(data.get('password')),
             )
             new_user.save_user()
 
@@ -85,11 +83,11 @@ class Login(Resource):
 
         user = User.query.filter_by(email=email).first()
 
-        if (user is not None) and check_password_hash(user.password_hash,
+        if (user is not None) and check_password_hash(user.password,
                                                       password):
 
-            access_token = create_access_token(identity=user.username)
-            refresh_token = create_refresh_token(identity=user.username)
+            access_token = create_access_token(identity=user.fullname)
+            refresh_token = create_refresh_token(identity=user.fullname)
 
             response = {
                 'access_token': access_token,
@@ -109,6 +107,6 @@ class Refresh(Resource):
         """
         Generate New Access Token
         """
-        username = get_jwt_identity()
+        fullname = get_jwt_identity()
 
-        return {"username": username}
+        return {"fullname": fullname}

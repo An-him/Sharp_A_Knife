@@ -7,20 +7,13 @@ class User(db.Model):
     __tablename__ = 'users'
 
     id=db.Column(db.Integer(), primary_key=True)
-    username=db.Column(db.String(255),nullable=False)
+    fullname=db.Column(db.String(255),nullable=False)
     email=db.Column(db.String(255),nullable=False,unique=True)
-    password_hash=db.Column(db.Text(),nullable=False)
-    location=db.Column(db.Text(),nullable=True)
-    is_staff=db.Column(db.Boolean(),default=False)
-    is_active=db.Column(db.Boolean(),default=True)
-    created_at = db.Column(db.DateTime(), default=datetime.utcnow, nullable=False)  # Automatically set on creation
-    updated_at = db.Column(db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)  # Automatically updated
-
-    orders=db.relationship('Order',backref='client',lazy=True)
+    password=db.Column(db.Text(),nullable=False)
 
 
     def __repr__(self):
-          return f"<User {self.username}>"
+          return f"<User {self.fullname}>"
 
 
     def save_user(self):
