@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top">
+          <div class="logo">
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp"> close </span>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <a href="#" class="active">
+            <span class="material-icons-sharp"> dashboard </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="Messages.html">
+            <span class="material-icons-sharp"> mail_outline </span>
+            <h3>Messages</h3>
+            <span id="message-count"></span>
+          </a>
+          <a href="BlogD.html">
+            <span class="material-icons-sharp"> receipt_long </span>
+            <h3>Blogs</h3>
+          </a>
+          <a href="Users.html">
+            <span class="material-icons-sharp"> person_outline </span>
+            <h3>Users</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp"> settings </span>
+            <h3>Settings</h3>
+          </a>
+          <a href="./Blog.html">
+            <span class="material-icons-sharp"> home </span>
+            <h3>Add</h3>
+          </a>
+          <a href="./Blog.html" onclick="Logout()">
+            <span class="material-icons-sharp"> logout </span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+
+      <main>
+        <h1 style="color:#e35125">Dashboard</h1>
+
+        <div class="date">
+          <input type="date" id="date" value="" />
+        </div>
+
+        <div class="recent-orders">
+          <h2>Statistics</h2>
+          <table id="recent-orders--table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <!-- Add tbody here | JS insertion -->
+            <div style="margin-top: 15px; font-size: 20px;color:black "> <u>Messages:</u> &nbsp &nbsp &nbsp<span id="messageDataCount" style ="color:#e35125">0</span></div>
+            <div style="margin-top: 15px; font-size: 20px;color:black "> <u>Blogs:</u> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<span id="blogDataCount" style ="color:#e35125">0</span></div>
+            <div style="margin-top: 15px; font-size: 20px;color:black "> <u>Orders:</u> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<span id="userDataCount" style ="color:#e35125">0</span></div>
+            <div style="margin-top: 20px; font-size: 20px;color:#e35125; text-align: center; margin-bottom: 10px; "> <u>List of Orders:</u></div>
+
+          </table>
+          <div style="margin-top: 20px; margin-left: 20px; font-size: 20px;"> </div>
+            <div style="margin-top: 20px; margin-left: 20px; font-size: 20px;"> </div>
+            <div style="margin-top: 20px; margin-left: 20px; font-size: 20px;"> </div>
+          <a href="#">Show All</a>
+        </div>
+      </main>
+
+      <div class="right">
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons-sharp"> menu </span>
+          </button>
+          <div class="profile">
+            <div class="info">
+              <p>Hey, <b class="avatar">Blaise</b></p>
+              <small class="text-muted">Admin</small>
+            </div>
+            <div class="profile-photo">
+              <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-grey-photo-placeholder-male-default-profile-gray-person-picture-isolated-white-background-good-man-102846161.jpg" alt="Profile Picture" style="width:80%; height: auto;padding-left: 25%;" />
+            </div>
+          </div>
+        </div>
+
+        <div class="recent-updates">
+          <h2>Recent Activities</h2>
+          <!-- Add updates div here | JS insertion -->
+        </div>
+
+        <div class="sales-analytics">
+          <h2></h2>
+          <div id="analytics">
+            <!-- Add items div here | JS insertion -->
+          </div>
+          <div class="item add-product">
+            <div>
+              <span class="material-icons-sharp"> add </span>
+              <a href="./AddBlog copy.html"><h3 style="margin-top: 5%;">Add Blog</h3></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./constants/recent-order-data.js"></script>
+    <script src="./constants/update-data.js"></script>
+    <script src="./constants/sales-analytics-data.js"></script>
+    <script src="../js/Dashboard.js"></script>
+  </body>
+</html>
