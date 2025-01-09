@@ -1,122 +1,57 @@
-# Operating system files
 .DS_Store
 Thumbs.db
 
-# IDE/Editor files
 .idea/
 .vscode/
 *.swp
 *.swo
+*.swn
+.*.un~
+# Emacs and Vim-specific temporary or backup files
+*~
+.\#*
+.#*
+.emacs.desktop
+.emacs.desktop.lock
+Session.vim
 
-# Logs and debugging
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+*.pyo
+*.pyd
+.venv/
+venv/
+pip-wheel-metadata/
+*.pytest_cache
+
+.env
+.env.local
+.env.*.local
+
+
+instance/
+*.sqlite3
+*.db
+
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Temporary files and backups
 *.tmp
 *.temp
 *.bak
 ~$*
 
-# Dependency directories
 node_modules/
 bower_components/
-
-# Environment files
-.env
-.env.local
-.env.*.local
-
-# Build and generated files
-/dist/
-/build/
-out/
-*.map
-
-# Cache and virtual environments
-__pycache__/
-*.py[cod]
-*.egg-info/
-.eggs/
-.cache/
-
-# Package managers
 package-lock.json
 yarn.lock
 pdm.lock
-pip-wheel-metadata/
 poetry.lock
 
-# Files related to deployment
+*.map
+/dist/
+/build/
+
 *.key
 *.crt
 *.pem
-
-
-# Python compiled files
-*.pyc
-*.pyo
-*.pyd
-
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
-# Virtual environments
-venv/
-.venv/
-
-# pytest
-.cache/
-.pytest_cache/
-.tox/
-
-# npm packages
-node_modules/
-
-# Build outputs
-coverage/
-*.test.ts
-*.test.js
-
-# Linting cache
-eslintcache
-.stylelintcache
-
-# Compiled object files
-*.o
-*.so
-*.dll
-*.exe
-
-# Generated files
-*.dSYM/
-*.bin
-*.elf
-*.map
-*.hex
-
-# SASS/SCSS Cache
-.sass-cache/
-
-# PostCSS
-*.css.map
-
-# Emacs temporary files
-*~
-.\#*
-# Auto-save files
-.#*
-# Sessions and backups
-.emacs.desktop
-.emacs.desktop.lock
-
-# Vim temporary files
-*.swp
-*.swo
-*.swn
-*.un~
-# Vim session files
-Session.vim
-
