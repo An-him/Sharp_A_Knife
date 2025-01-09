@@ -4,11 +4,12 @@ from flask_restx import Api
 from .orders.views import order_namespace
 from .auth.views import auth_namespace
 from .users.views import users_namespace
+from .contact.views import contact_namespace
 from .config.config import config_dict
 from .utils import db
 from .models.orders import Order
 from .models.users import User
-from .models.blade import Blade
+from .models.contactForm import ContactForm
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
@@ -70,6 +71,7 @@ def create_app(config=config_dict['dev']):
     api.add_namespace(order_namespace)
     api.add_namespace(auth_namespace, path='/auth')
     api.add_namespace(users_namespace, path='/users')
+    api.add_namespace(contact_namespace, path='/contact')
 
 
 
@@ -79,7 +81,7 @@ def create_app(config=config_dict['dev']):
             'db':db,
             'User':User,
             'Order':Order,
-            'Blade':Blade
+            'ContactForm':ContactForm
         }
 
-    return app  
+    return app
