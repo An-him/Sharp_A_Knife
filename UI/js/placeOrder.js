@@ -16,7 +16,7 @@ function updateKnifeCount(value) {
       event.preventDefault();
 
       var formData = {
-          name: $('#name').val(),
+          fullname: $('#name').val(),
           email: $('#email').val(),
           message: $('#message').val(),
       };
@@ -24,7 +24,7 @@ function updateKnifeCount(value) {
 
       $.ajax({
           type: 'POST',
-          url:  'https://team-furebo-e-commerce-bn.onrender.com/api/login',
+          url:  'http://localhost:5000/contact/contactform',
           data: JSON.stringify(formData),
           contentType: 'application/json',
           success: function(response) {
