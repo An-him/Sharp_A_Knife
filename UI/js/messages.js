@@ -16,7 +16,7 @@
     redirect: 'follow'
   };
   
-  fetch("http://localhost:5000/server/contactQueries", requestOptions)
+  fetch("http://localhost:5000/contact/contactform", requestOptions)
     .then(response => response.text())
     .then(result => {console.log(result), localStorage.setItem('contactData', result)})
     .catch(error => console.log('error', error));
@@ -153,7 +153,7 @@ deleteProduct = i => {
         };
         
 
-        fetch(`http://localhost:5000/server/contactQueries/${data[++i]._id}`, requestOptions)
+        fetch(`http://localhost:5000/contact/contactform/${data[++i]._id}`, requestOptions)
         .then(response => response.json())
         .then(result => console.log(result))
         .catch(error => console.log(error.message))
