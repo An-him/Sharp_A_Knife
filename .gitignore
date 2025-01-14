@@ -49,3 +49,6 @@ static/
 # Miscellaneous
 .DS_Store
 Thumbs.db
+
+# Emacs file
+*~
