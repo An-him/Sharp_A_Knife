@@ -48,7 +48,17 @@ Before running the app, ensure you have the following installed on your system:
    DEBUG=
    JWT_SECRET_KEY=JWT_SECRET_KEY
    ```
-2. Initialize the database:
+2. Export the API as the default FLASK_APP:
+   ```bash
+      export FLASK_APP=api
+
+   ```
+   or run the server from python:
+   ```bash
+   python runserver.py
+   ```
+```
+3. Initialize the database:
    ```bash
    flask db init
    flask db migrate
@@ -62,15 +72,6 @@ Before running the app, ensure you have the following installed on your system:
    ```bash
    source venv/bin/activate
    ```
-2. Export the API as the default FLASK_APP:
-   ```bash
-   export FLASK_APP=api
-   ```
-   or run the server from python:
-   ```bash
-   python runserver.py
-   ```
-
 ---
 
 ## 🧪 **Testing**
