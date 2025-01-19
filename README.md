@@ -1,6 +1,7 @@
 # 🛠️ Sharp-A-Knife Co. API
 
-Welcome to the **Sharp-A-Knife Co. API**! This application provides a platform to manage knife sharpening orders, customer profiles, and pricing information. Follow the instructions below to set up and run the app locally.
+Welcome to the **Sharp-A-Knife Co. API**!
+This application provides a platform to manage knife sharpening orders, customer profiles, and pricing information. Follow the instructions below to set up and run the app locally.
 
 ---
 
