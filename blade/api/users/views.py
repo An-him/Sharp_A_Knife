@@ -37,6 +37,17 @@ def get_user_profile(user_id):
             "updated_at": user.updated_at
         }
 
+	# Format order history
+        order_history = []
+        for order in orders:
+            order_history.append({
+                "id": order.id,
+                "order_status": order.order_status,
+                "service": order.service,
+                "quantity": order.quantity,
+                "total": order.total,
+                "date_created_at": order.date_created_at
+            })
 
 
 users_namespace=Namespace("users", description="namespace for User operations")
