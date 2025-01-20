@@ -16,6 +16,11 @@ def get_user_profile(user_id):
     """
     Retrieve user profile information, including user details and order history.
     """
+    try:
+        # Fetch user details
+        user = User.query.get(user_id)
+        if not user:
+            return jsonify({"error": "User not found"}), 404
 
 
 
