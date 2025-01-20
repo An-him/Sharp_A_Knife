@@ -8,6 +8,18 @@ from api.models.users import User
 from api.models.orders import Order
 from api.config import db
 
+# Blueprint for users
+users_blueprint = Blueprint('users', __name__)
+
+@users_blueprint.route('/users/<int:user_id>/profile', methods=['GET'])
+def get_user_profile(user_id):
+    """
+    Retrieve user profile information, including user details and order history.
+    """
+
+
+
+
 
 users_namespace=Namespace("users", description="namespace for User operations")
 
