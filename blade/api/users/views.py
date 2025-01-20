@@ -48,6 +48,17 @@ def get_user_profile(user_id):
                 "total": order.total,
                 "date_created_at": order.date_created_at
             })
+	
+	# Combine user details and order history
+        profile_data = {
+            "user": user_data,
+            "orders": order_history
+        }
+
+        return jsonify(profile_data), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 users_namespace=Namespace("users", description="namespace for User operations")
