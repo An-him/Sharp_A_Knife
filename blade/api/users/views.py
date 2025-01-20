@@ -3,6 +3,11 @@ from flask_restx import Resource,Namespace,fields
 from ..models.users import User
 from ..utils import db
 
+from flask import Blueprint, jsonify, request
+from api.models.users import User
+from api.models.orders import Order
+from api.config import db
+
 
 users_namespace=Namespace("users", description="namespace for User operations")
 
