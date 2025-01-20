@@ -24,7 +24,18 @@ def get_user_profile(user_id):
 
         # Fetch order history for the user
         orders = Order.query.filter_by(user_id=user_id).all()
-
+ 
+        # Format user details
+        user_data = {
+            "id": user.id,
+            "username": user.username,
+            "email": user.email,
+            "location": user.location,
+            "is_staff": user.is_staff,
+            "is_active": user.is_active,
+            "created_at": user.created_at,
+            "updated_at": user.updated_at
+        }
 
 
 
