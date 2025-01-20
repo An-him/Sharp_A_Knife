@@ -22,6 +22,8 @@ def get_user_profile(user_id):
         if not user:
             return jsonify({"error": "User not found"}), 404
 
+        # Fetch order history for the user
+        orders = Order.query.filter_by(user_id=user_id).all()
 
 
 
