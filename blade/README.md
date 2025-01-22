@@ -18,5 +18,3 @@
 - **Access Levels**:
   - **Public**: No authentication required.
   - **Authenticated**: Requires a valid authentication token.
-
-- Use the base URL:  
