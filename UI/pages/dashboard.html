@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="../css/dashboard.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="loading" id="preloader">LOADING....</div>
+    <div class="container" id="mainContent">
       <aside>
         <div class="top">
           <div class="logo">
@@ -124,7 +125,8 @@
         </div>
       </div>
     </div>
-
+    <!--jquery library-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./constants/recent-order-data.js"></script>
     <script src="./constants/update-data.js"></script>
     <script src="./constants/sales-analytics-data.js"></script>

@@ -1,6 +1,10 @@
+$(document).ready(async function () {
+  const preloader = $('#preloader');
+  const mainContent = $('#mainContent');
+
 const dateInput = document.getElementById('date');
     const today = new Date().toISOString().split('T')[0];
-    console.log(today. dateInput)
+    dateInput.value = today;
 
 var myHeaders = new Headers();
 myHeaders.append("authorization", JSON.parse(localStorage.getItem('current_user')).accessToken);
@@ -11,7 +15,7 @@ var requestOptions = {
     redirect: 'follow'
   };
   
-  fetch("http://localhost:5000/users", requestOptions)
+  fetch("http://localhost:5000/orders/orders/", requestOptions)
   .then(response => response.text())
   .then(result => {console.log(result), localStorage.setItem('signupData', result)})
   .catch(error => console.log('error', error));
@@ -55,6 +59,8 @@ document.addEventListener("DOMContentLoaded", (ev) => {
     // Sales Analytics
     const salesAnalytics = document.getElementById("analytics");
     buildSalesAnalytics(salesAnalytics);
+    preloader.hide();
+    mainContent.show();
   });
   
   // Document Builder
@@ -168,3 +174,7 @@ Logout=()=>{
 
       console.log(userData)
       userDataCount.textContent = userData ? userData.length : 0;**/
+
+preloader.hide();
+mainContent.show();
+});
