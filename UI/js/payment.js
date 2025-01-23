@@ -12,17 +12,19 @@ $(document).ready(function() {
         fullname: $('#fname').val(),
         email: $('#email').val(),
         address: $('#address').val(),
-        city: $('#city').val(),
-        state: $('#state').val(),
+        House_number: $('#House_number').val(),
+        phone_number: $('#phone_number').val(),
         zip: $('#zip').val(),
         cardname: $('#cname').val(),
         cardnumber: $('#ccard').val(),
         expmonth: $('#expmonth').val(),
         expyear: $('#expyear').val(),
         cvv: $('#cvv').val(),
+        quantity: quantity,
     };
-    $('#contact-btn').text("Processing...");
-
+    
+    $('#payment-btn').val("Processing...");
+    
     $.ajax({
         type: 'POST',
         url:  'http://localhost:5000/orders/orders/',
@@ -30,12 +32,12 @@ $(document).ready(function() {
         contentType: 'application/json',
         success: function(response) {
             alert('Payment successful!');
-            $('#payment-btn').text("Payemnt Successful!");
+            $('#payment-btn').val("Payemnt Successful!");
             $('#payment-btn').css("color","green");
         },
         error: function(error) {
             alert('An error occurred during checkout. Please try again.');
-            $('#payment-btn').text("Something went wrong");
+            $('#payment-btn').val("Something went wrong");
             $('#payment-btn').css("color","yellow"); 
         }
       });

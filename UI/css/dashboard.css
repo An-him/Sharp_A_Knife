@@ -39,7 +39,7 @@
 }
 
 /* Preloader Styles */
-/* #preloader {
+#preloader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +50,7 @@
 
 #mainContent {
   display: none;
-} */
+} 
 
 /* STYLES */
 * {
@@ -213,7 +213,7 @@ aside .sidebar a:hover {
 aside .sidebar a:hover span {
   margin-left: 1rem;
 }
-aside .sidebar #message-count {
+aside .sidebar .count {
   background: var(--color-danger);
   color: var(--color-white);
   padding: 2px 10px;
