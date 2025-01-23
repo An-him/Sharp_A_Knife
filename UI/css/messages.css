@@ -3,7 +3,7 @@
 
 /* ROOT VARIABLES */
 :root {
-  --color-primary: #0A79B8;
+  --color-primary: #e35125;
   --color-danger: #ff7782;
   --color-success: #41f1b6;
   --color-warning: #ffbb55;
@@ -36,6 +36,20 @@
   --color-light: rgba(0, 0, 0, 0.4);
   --box-shadow: 0 2rem 3rem var(--color-light);
 }
+
+/* Preloader Styles */
+#preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 24px;
+  color: #333;
+}
+
+#mainContent {
+  display: none;
+} 
 
 /* STYLES */
 * {
