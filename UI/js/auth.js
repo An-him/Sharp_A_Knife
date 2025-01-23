@@ -19,6 +19,8 @@ $(document).ready(function() {
             email: $('#login-email').val(),
             password: $('#login-password').val(),
         };
+        $('#payment-btn').text("Something went wrong");
+        $('#payment-btn').css("color","yellow");
     
         $.ajax({
             type: 'POST',

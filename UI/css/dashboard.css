@@ -38,6 +38,20 @@
   --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
+/* Preloader Styles */
+/* #preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 24px;
+  color: #333;
+}
+
+#mainContent {
+  display: none;
+} */
+
 /* STYLES */
 * {
   margin: 0;
