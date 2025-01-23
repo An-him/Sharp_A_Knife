@@ -39,7 +39,7 @@
 }
 
 /* Preloader Styles */
-/* #preloader {
+#preloader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +50,7 @@
 
 #mainContent {
   display: none;
-} */
+} 
 
 /* STYLES */
 * {
