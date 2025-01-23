@@ -19,7 +19,7 @@ from werkzeug.exceptions import NotFound, MethodNotAllowed
 
 
 
-def create_app(config=config_dict['prod']):
+def create_app(config=config_dict['dev']):
 
     blade_dir=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     project_root=os.path.dirname(blade_dir)
