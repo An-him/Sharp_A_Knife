@@ -17,13 +17,23 @@ class Service(Enum):
 class Order(db.Model):
     __tablename__ = 'orders'
     id=db.Column(db.Integer(), primary_key=True)
-    order_status=db.Column(db.Enum(OrderStatus),default=OrderStatus.BLUNT)
-    service=db.Column(db.Enum(Service),default=Service.WHETTING, nullable=False)
-    quantity=db.Column(db.Integer(),default=3,nullable=False)
+    fullname=db.Column(db.String(255), nullable=False)
+    email=db.Column(db.String(255), nullable=False)
+    address=db.Column(db.String(255), nullable=False)
+    House_number=db.Column(db.String(4), nullable=False)
+    phone_number=db.Column(db.String(13), nullable=False)
+    quantity=db.Column(db.Integer(), nullable=False)
     total=db.Column(db.Float(), nullable=True)
     date_created_at=db.Column(db.DateTime(),default=datetime.utcnow)
 
-    user_id=db.Column(db.Integer(), db.ForeignKey('users.id'))
+    def __init__(self,fullname,email,address,House_number,phone_number,quantity,total):
+        self.fullname=fullname
+        self.email=email
+        self.address=address
+        self.House_number=House_number
+        self.phone_number=phone_number
+        self.quantity=quantity
+        self.total=total
 
     def __repr__(self):
         return f'<Order {self.id}>'
