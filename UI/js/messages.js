@@ -16,7 +16,7 @@
     redirect: 'follow'
   };
   
-  fetch("http://localhost:5000/server/contactQueries", requestOptions)
+  fetch("http://localhost:5000/contactform", requestOptions)
     .then(response => response.text())
     .then(result => {console.log(result), localStorage.setItem('contactData', result)})
     .catch(error => console.log('error', error));
