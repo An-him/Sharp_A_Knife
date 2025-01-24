@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="../css/messages.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="loading" id="preloader">LOADING....</div>
+    <div class="container" id="mainContent">
       <aside>
         <div class="top">
           <div class="logo">
@@ -59,10 +60,10 @@
       </aside>
 
       <main>
-        <h1 style="color:#0A79B8">Dashboard</h1>
+        <h1 style="color:#e35125">Dashboard</h1>
 
         <div class="date">
-          <input type="date" />
+          <input type="date" id="date" />
         </div>
 
         <div id="output">
@@ -111,5 +112,6 @@
     <script src="./constants/update-data.js"></script>
     <script src="./constants/sales-analytics-data.js"></script>
     <script src="../js/messages.js"></script>
+
   </body>
 </html>
