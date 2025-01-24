@@ -13,8 +13,6 @@ class Config():
     JWT_SECRET_KEY=config('JWT_SECRET_KEY')
 
 
-
-
 class DevConfig(Config):
     DEBUG=config('DEBUG',cast=bool)
     SQLALCHEMY_ECHO=True
@@ -22,7 +20,9 @@ class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI='sqlite:///'+os.path.join(BASEDIR,'dev.db')
 
 class ProdConfig(Config):
-    pass
+    SQLALCHEMY_DATABASE_URI=config('DATABASE_URL')
+    SQLALCHEMY_TRACK_MODIFICATIONS=False
+    DEBUG=config('DEBUG',cast=bool)
 
 class TestConfig(Config):
     TESTING=True

@@ -1,14 +1,16 @@
+import os
 from flask import Flask
 from flask_migrate import Migrate
 from flask_restx import Api
 from .orders.views import order_namespace
 from .auth.views import auth_namespace
 from .users.views import users_namespace
+from .contactform.views import contact_namespace
 from .config.config import config_dict
 from .utils import db
 from .models.orders import Order
 from .models.users import User
-from .models.blade import Blade
+from .models.contactform import ContactForm
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
@@ -17,13 +19,22 @@ from werkzeug.exceptions import NotFound, MethodNotAllowed
 
 
 
-
-
-
 def create_app(config=config_dict['dev']):
-    app=Flask(__name__)
+
+    blade_dir=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    project_root=os.path.dirname(blade_dir)
 
 
+    static_folder = os.path.join(project_root, 'UI')
+
+    
+    app=Flask(__name__, static_folder=static_folder, static_url_path='')
+    print(f"Checking index.html at: {os.path.join(app.static_folder, 'index.html')}")
+    print(f"App static folder: {app.static_folder}")
+    print(f"App static url path: {app.static_url_path}")
+
+
+    
     CORS(app)
 
 
@@ -47,7 +58,8 @@ def create_app(config=config_dict['dev']):
             title='SharpAKnife API',
             description='REST API for Kitchen Blade Services',
             authorizations=authorizations,
-            security='Bearer Auth'
+            security='Bearer Auth',
+            doc='/docs'
             )
 
     jwt=JWTManager(app)
@@ -60,17 +72,28 @@ def create_app(config=config_dict['dev']):
         return {'error':'Not found'},404
 
 
-
     @api.errorhandler(MethodNotAllowed)
     def method_not_allowed(error):
         return {'error':'Method not allowed'},405
 
+    @app.route('/test')
+    def test():
+        return {'message': 'Test route working'}, 200
 
-
-    api.add_namespace(order_namespace)
+    api.add_namespace(order_namespace, path='/orders')
     api.add_namespace(auth_namespace, path='/auth')
+    api.add_namespace(contact_namespace, path='/contact')
     api.add_namespace(users_namespace, path='/users')
 
+
+
+    @app.route('/')
+    def index():
+        try:
+            return app.send_from_directory(app.static_folder, 'index.html')
+        except Exception as e:
+            print(f"Error serving index.html: {str(e)}")
+            return {"error": str(e)}, 500
 
 
     @app.shell_context_processor
@@ -79,7 +102,7 @@ def create_app(config=config_dict['dev']):
             'db':db,
             'User':User,
             'Order':Order,
-            'Blade':Blade
+            'Contact':Contact,
         }
 
     return app  
