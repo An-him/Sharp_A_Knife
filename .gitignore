@@ -55,5 +55,5 @@ Thumbs.db
 
 *.github
 
-# Local database files
+#Local databse files
 migrations/

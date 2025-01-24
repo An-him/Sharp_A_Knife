@@ -19,8 +19,7 @@ $(document).ready(function() {
             email: $('#login-email').val(),
             password: $('#login-password').val(),
         };
-        $('#payment-btn').text("Something went wrong");
-        $('#payment-btn').css("color","yellow");
+        $('#auth-btn').text("Loggin...");
     
         $.ajax({
             type: 'POST',
@@ -28,11 +27,21 @@ $(document).ready(function() {
             data: JSON.stringify(formData),
             contentType: 'application/json',
             success: function(response) {
+                $('#auth-btn').text("Logged In Successfully");
+                $('#auth-btn').css("color","green");
                 alert('login successful!');
-                location.href = "dashboard.html"
+                localStorage.setItem('current_user', JSON.stringify(response))
+                console.log(response);
+                
+                setTimeout(() => {
+                    location.href = "dashboard.html"
+                }, 2000); 
+
             },
             error: function(error) {
-                alert('An error occurred during checkout. Please try again.'); 
+                $('#auth-btn').text("Error");
+                $('#auth-btn').css("color","yellow");
+                alert('An error occurred during Log In. Please try again.'); 
             }
           });
         });
@@ -51,10 +60,14 @@ $(document).ready(function() {
             data: JSON.stringify(formData),
             contentType: 'application/json',
             success: function(response) {
+                $('#auth-btn').text("Signed In Successfully");
+                $('#auth-btn').css("color","green");
                 alert('SignUp successful! Please Proceed to login');
             },
             
             error: function(error) {
+                $('#auth-btn').text("Error");
+                $('#auth-btn').css("color","yellow");
                 alert('An error occurred during checkout. Please try again.'); 
             },
             
