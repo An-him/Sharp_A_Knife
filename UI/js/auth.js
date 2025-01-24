@@ -48,15 +48,16 @@ $(document).ready(function() {
         $.ajax({
             type: 'POST',
             url:  'http://localhost:5000/auth/signup',
-            
             data: JSON.stringify(formData),
             contentType: 'application/json',
             success: function(response) {
-                alert('SingUp successful! Please Proceed to login');
+                alert('SignUp successful! Please Proceed to login');
             },
+            
             error: function(error) {
                 alert('An error occurred during checkout. Please try again.'); 
-            }
+            },
+            
             });
         });
   });

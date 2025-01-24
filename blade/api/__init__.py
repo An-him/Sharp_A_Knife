@@ -5,11 +5,12 @@ from flask_restx import Api
 from .orders.views import order_namespace
 from .auth.views import auth_namespace
 from .users.views import users_namespace
+from .contactform.views import contact_namespace
 from .config.config import config_dict
 from .utils import db
 from .models.orders import Order
 from .models.users import User
-from .models.blade import Blade
+from .models.contactform import ContactForm
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
@@ -18,7 +19,7 @@ from werkzeug.exceptions import NotFound, MethodNotAllowed
 
 
 
-def create_app(config=config_dict['prod']):
+def create_app(config=config_dict['dev']):
 
     blade_dir=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     project_root=os.path.dirname(blade_dir)
@@ -81,6 +82,7 @@ def create_app(config=config_dict['prod']):
 
     api.add_namespace(order_namespace, path='/orders')
     api.add_namespace(auth_namespace, path='/auth')
+    api.add_namespace(contact_namespace, path='/contact')
     api.add_namespace(users_namespace, path='/users')
 
 
@@ -100,7 +102,7 @@ def create_app(config=config_dict['prod']):
             'db':db,
             'User':User,
             'Order':Order,
-            'Blade':Blade
+            'Contact':Contact,
         }
 
     return app  
