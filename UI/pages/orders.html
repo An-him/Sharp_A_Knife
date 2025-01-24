@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="../css/messages.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="loading" id="preloader">LOADING....</div>
+    <div class="container" id="mainContent">
       <aside>
         <div class="top">
           <div class="logo">
@@ -28,7 +29,7 @@
             <span class="material-icons-sharp"> dashboard </span>
             <h3>Dashboard</h3>
           </a>
-          <a href="messages.html" class="active">
+          <a href="messages.html" >
             <span class="material-icons-sharp"> mail_outline </span>
             <h3>Messages</h3>
             <span id="message-count"></span>
@@ -38,7 +39,7 @@
             <h3>Users</h3>
             <span class="user-count"></span>
           </a>
-          <a href="Orders.html">
+          <a href="Orders.html" class="active">
             <span class="material-icons-sharp"> receipt_long </span>
             <h3>Orders</h3>
           </a>
@@ -46,9 +47,9 @@
             <span class="material-icons-sharp"> settings </span>
             <h3>Settings</h3>
           </a>
-          <a href="Users.html">
-            <span class="material-icons-sharp"> add </span>
-            <h3>Add</h3>
+          <a href="../index.html">
+            <span class="material-icons-sharp"> home </span>
+            <h3>Home</h3>
           </a>
           <a href="./Blog.html">
             <span class="material-icons-sharp"> logout </span>
@@ -58,14 +59,14 @@
       </aside>
 
       <main>
-        <h1 style="color:#0A79B8">Dashboard</h1>
+        <h1 style="color:#e35125">Dashboard</h1>
 
         <div class="date">
-          <input type="date" />
+          <input type="date" id="date" />
         </div>
 
         <div id="output">
-            <h2>Message LIST</h2>
+            <h2>Orders LIST</h2>
             <a href="javascript:void(0);" id="btnClearData">Empty Data[<span id="dataCount">0</span>]</a>
             <input type="search" id="search" placeholder="Search...">
         </div>
@@ -73,11 +74,12 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th>Date</th>
+                    <th>Name</th>
                     <th>Email</th>
-                    <th>Subject</th>
-                    <th>Message</th>
+                    <th>Phone Number</th>
+                    <th>Address</th>
+                    <th>Number Of Knives</th>
                     <th>ACTION</th>
                 </tr>
             </thead>
@@ -108,7 +110,7 @@
     <script src="./constants/recent-order-data.js"></script>
     <script src="./constants/update-data.js"></script>
     <script src="./constants/sales-analytics-data.js"></script>
-    <script src="../js/messages2.js"></script>
+    <script src="../js/orders.js"></script>
 
   </body>
 </html>

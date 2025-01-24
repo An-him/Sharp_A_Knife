@@ -83,7 +83,7 @@ Before running the app, ensure you have the following installed on your system:
 ---
 
 ## 📄 **API Documentation**
-The API documentation is available at http://127.0.0.1:5000/swagger/ once the server is running.
+The API documentation is available at http://127.0.0.1:5000/docs/ once the server is running.
 
 ---
 

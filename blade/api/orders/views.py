@@ -95,7 +95,6 @@ class OrderGetCreate(Resource):
             phone_number=data['phone_number'],
             quantity=data['quantity'],
             total=data['quantity'],
-            created_at=data['date_created_at'],
         )
         new_order.client=current_user
     
