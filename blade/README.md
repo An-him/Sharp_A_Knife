@@ -1,3 +1,8 @@
+## Activate the Virtual Environment
+`source venv/bin/activate` (Linux/Ubuntu)
+`venv\Scripts\activate` (Windows: Command Line Prompt)
+`venv\Scripts\Activate.ps1` (Windows: Powershell)
+
 ## 🛠️ ROUTES TO IMPLEMENT
 
 
@@ -18,3 +23,4 @@
 - **Access Levels**:
   - **Public**: No authentication required.
   - **Authenticated**: Requires a valid authentication token.
+
