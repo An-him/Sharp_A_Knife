@@ -57,9 +57,10 @@ def create_app(config=config_dict['dev']):
     api=Api(app,
             title='SharpAKnife API',
             description='REST API for Kitchen Blade Services',
-            authorizations=authorizations,
+            authorizations='authorizations',
             security='Bearer Auth',
-            doc='/docs'
+            doc='/docs',
+            version='1.0',
             )
 
     jwt=JWTManager(app)
@@ -87,7 +88,7 @@ def create_app(config=config_dict['dev']):
 
 
 
-    @app.route('/')
+    @app.route("/")
     def index():
         try:
             return app.send_from_directory(app.static_folder, 'index.html')
