@@ -4,6 +4,8 @@ from flask_jwt_extended import jwt_required, get_jwt_identity
 from ..models.orders import Order
 from ..models.users import User
 from ..utils import db
+from flask import Blueprint, request, jsonify
+from api.utils.mpesa import MpesaPayment
 
 
 
@@ -217,3 +219,25 @@ class UpdateOrderStatus(Resource):
         db.session.commit()
 
         return order_to_update, HTTPStatus.OK
+
+
+
+
+//for mpesa integrations
+
+orders_blueprint = Blueprint('orders', __name__)
+
+@orders_blueprint.route('/orders/<int:order_id>/pay', methods=['POST'])
+def process_payment(order_id):
+    data = request.get_json()
+    amount = data.get('amount')
+    phone_number = data.get('phone_number')
+    account_reference = f"Order-{order_id}"
+
+    payment_response = MpesaPayment.initiate_payment(amount, phone_number, account_reference)
+
+    if payment_response.get('ResponseCode') == '0':
+        return jsonify({'message': 'Payment successful', 'response': payment_response}), 200
+    else:
+        return jsonify({'error': 'Payment failed', 'response': payment_response}), 400
+
