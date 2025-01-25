@@ -16,15 +16,16 @@ function updateKnifeCount(value) {
       event.preventDefault();
 
       var formData = {
-          name: $('#name').val(),
+          fullname: $('#fullname').val(),
           email: $('#email').val(),
+          title: $('#title').val(),
           message: $('#message').val(),
       };
       $('#contact-btn').text("Sending...");      
 
       $.ajax({
           type: 'POST',
-          url:  'http://localhost:5000/orders/orders',
+          url:  'http://localhost:5000/contact/contact/',
           data: JSON.stringify(formData),
           contentType: 'application/json',
           success: function(response) {
