@@ -1,8 +1,5 @@
 /*
-    Template Name    : Fusebox
-	Description		 : Electrical Services HTML Template 
-    Version          : 1.0
-/*
+
 ================================================
 /* Table of Content
 ==================================================
@@ -324,7 +321,7 @@ header.sticky {
 	opacity: 1;
 	visibility: visible;
 	z-index: 99999;
-	background-color: #fff;
+	background-color: black;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 header::before {
@@ -366,7 +363,7 @@ header.v2 .header-logo {
 }
 ul.main-menu li a {
 	font-size: 16px;
-	color: #000000;
+	color: white;
 	text-transform: capitalize;
 	font-weight: 500;
 	line-height: 32px;
@@ -386,7 +383,7 @@ ul.main-menu>li:first-child {
 	margin-left: 0;
 }
 ul.main-menu li a:hover {
-	color: #003769;
+	color: #e35125;
 }
 ul.main-menu li.sub-menu-wrap a {
 	padding-right: 15px !important;
@@ -767,7 +764,7 @@ ul.main-menu li:hover ul.sub-menu {
 7. Our Features
 ================================================
 */
-/** Single Feeatues Sec **/
+/** Single Featues Sec **/
 .features-sec .single-feature-sec {
 	position: relative;
 	-webkit-box-shadow: 0px 8px 16px 0px rgba(73, 167, 211, 0.1);
@@ -810,6 +807,120 @@ ul.main-menu li:hover ul.sub-menu {
 	-webkit-transform: translateY(-15px);
 	transform: translateY(-15px);
 }
+/*
+================================================
+8. Place an order Sec
+================================================
+*/
+.place-order{
+	background: black;
+}
+.place-order .container .row .image{
+	width: 50%;
+}
+.place-order .container .row .image img{
+	width: 100%;
+}
+.order-container{
+	width: 50%;
+	padding: 30px;
+	font-family: 'Poppins', sans-serif;
+	box-shadow: 2px 9px 35px #0000001a;
+	/* border-radius: 30px; */
+	background: white;
+}
+.knife-selection {
+	text-align: left;
+	margin: 20px;
+	font-size: 1.5rem;
+  }
+  
+  #knifeRange {
+	width: 100%;
+	margin: 10px 0;
+	-webkit-appearance: none;
+	appearance: none;
+	background: #ddd;
+	height: 8px;
+	border-radius: 5px;
+	outline: none;
+	transition: background 0.3s;
+  }
+  
+  #knifeRange::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #ff6600;
+	cursor: pointer;
+	transition: background 0.3s;
+  }
+  
+  #knifeRange::-moz-range-thumb {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #ff6600;
+	cursor: pointer;
+	transition: background 0.3s;
+  }
+  
+  #knifeRange:hover {
+	background: #ccc;
+  }
+  
+  #knifeRange::-webkit-slider-thumb:hover {
+	background: #ff4500;
+  }
+  
+  #knifeRange::-moz-range-thumb:hover {
+	background: #ff4500;
+  }
+  
+  .knife-count {
+	font-size: 1em;
+	margin: 10px 5px 0 0;
+	text-align: center;
+  }
+  .knife-count-number {
+	color: #e35125;
+  }
+  .range-numbers {
+	display: flex;
+	justify-content: space-between;
+	width: 110%;
+	font-size: 0.6em;
+	color: black;
+  }
+  
+  .range-numbers span {
+	flex: 1;
+  }
+  .order-btn{
+	margin: 20px
+  }
+  .slider-btn-order{
+	display: inline-block;
+	position: relative;
+	border-radius: 0%;
+	width: 70%;
+	margin:0 0 0 0;
+  }
+  .slider-btn-order:hover{
+	margin-top: -5px;
+	margin-left: 0px;
+}
+.btn.ss-btn.order{
+	width: 100%;
+}
+.price{
+	font-size: 1.5rem;
+	color: #e35125;
+}
+  
+  
 /*
 ================================================
 8. About Sec
@@ -906,7 +1017,7 @@ ul.main-menu li:hover ul.sub-menu {
 ================================================
 */
 .home-service {
-	background: url(../images/cta-bg.jpg) center center no-repeat;
+	/* background: url(../images/cta-bg.jpg) center center no-repeat; */
 	background-size: cover;
 	position: relative;
 	z-index: 2;
@@ -919,7 +1030,7 @@ ul.main-menu li:hover ul.sub-menu {
 	width: 100%;
 	height: 100%;
 	background: black;
-	opacity: 0.3;
+	opacity: 1;
 	z-index: -1;
 }
 .home-service .part-txt h3 {
@@ -1510,7 +1621,7 @@ ul.main-menu li:hover ul.sub-menu {
 */
 .fun-fact {
 	padding: 90px 0;
-	background: url(../images/cta-bg.jpg) center center no-repeat;
+	/* background: url(../images/cta-bg.jpg) center center no-repeat; */
 	background-size: cover;
 	position: relative;
 	z-index: 2;
@@ -1523,7 +1634,7 @@ ul.main-menu li:hover ul.sub-menu {
 	width: 100%;
 	height: 100%;
 	background: black;
-	opacity: 0.3;
+	opacity: 1;
 	z-index: -1;
 }
 .fun-fact .single-box {
@@ -1774,8 +1885,8 @@ ul.main-menu li:hover ul.sub-menu {
 	display: inline-block;
 	color: #555;
 }
-.single-blog-sec .inner-box .lower-content .post-info li a:hover {
-}
+/* .single-blog-sec .inner-box .lower-content .post-info li a:hover {
+} */
 .single-blog-sec .inner-box .lower-content .link a {
 	position: relative;
 	display: inline-block;
@@ -2599,7 +2710,7 @@ ul.main-menu li:hover ul.sub-menu {
 */
 .footer-sec {
 	background-color: transparent;
-	background-image: url("../images/cta-bg.jpg");
+	/* background-image: url("../images/cta-bg.jpg"); */
 	background-position: center top;
 	background-size: cover;
 	position: relative;
@@ -2608,7 +2719,7 @@ ul.main-menu li:hover ul.sub-menu {
 .footer-sec:before {
 	/* background: #003561; */
 	background: black;
-	opacity: 0.3;
+	opacity: 1;
 	bottom: 0;
 	content: "";
 	height: 100%;
@@ -2827,7 +2938,7 @@ ul.main-menu li:hover ul.sub-menu {
 	transition: all .3s ease;
 }
 .copyright {
-	background: #0a4173;
+	background: #e35125;
 	color: #fff;
 	padding: 15px 0px;
 	float: left;
@@ -3074,3 +3185,209 @@ header::before {
 	margin-right: 25px;
 }
 }
+/*
+================================================
+18.  Payment
+================================================
+*/
+/* Container */
+.main{
+	margin: 0 14% 0 14%
+}
+.container-payment {
+	max-width: 800px;
+	padding: 20px;
+	background-color: #f2f2f2;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	width: 50%;
+	max-height: 600px;
+	overflow: auto;
+  }
+  
+  /* Form Sections */
+  .section-payment {
+	margin-bottom: 20px;
+  }
+  
+  /* Form Headings */
+  h2, h3 {
+	margin-bottom: 10px;
+  }
+  
+  /* Labels and Inputs */
+  label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+  }
+  
+  /* Row for Multiple Columns */
+  .row-payment {
+	display: flex;
+	justify-content: space-between;
+  }
+  
+  .col-50 {
+	flex: 0 0 48%;
+  }
+  
+  /* Submit Button */
+  .btn {
+	width: 100%;
+	padding: 15px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+  }
+  
+  .btn:hover {
+	background-color: #45a049;
+  }
+  .order-to-pay{
+	padding: 20px
+  }
+  .order-title{
+	text-decoration: underline;
+	margin-bottom: 50px;
+  }
+
+  .knives-price{
+	float: right;
+	margin-left: 100px;
+  }
+  .bi-cart-check-fill{
+	color:#e35125;
+	margin: 0 10px;
+	font-size: 60px;
+  }
+  .row.bill{
+	align-items: center;
+	font-size: 18px;
+	margin-bottom: 100px;
+  }
+  .row.total{
+	margin: auto;
+	align-items: baseline;
+	font-weight: 900;
+	font-size: x-large;
+  }
+  .knives-total{
+	float: left;
+	margin-left: 300px;
+  }
+  /*
+================================================
+18.  Authorization
+================================================
+*/
+/* Reset and container styles */
+.authorization {
+	font-family: "Poppins", sans-serif;
+	/* background-image:url(../images/IMG-20250104-WA0001.jpg);
+	background: black;
+	opacity: 0.5; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	max-height: 90vh;
+	margin: 0;
+	/* min-height: 810px; */
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+  }
+  /* .main::before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: black;
+	opacity: 0.3;
+} */
+  
+  .auth-container {
+	background: #d9d5d580;
+	padding: 20px 40px;
+	border-radius: 10px;
+	box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.6);
+	width: 350px;
+	margin-top: -100px;
+	text-align: center;
+	z-index: -1;
+
+  }
+  
+  .auth-toggle {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+  }
+  
+  .toggle-btn {
+	flex: 1;
+	padding: 10px;
+	margin: 0 5px;
+	border: none;
+	background-color: #f5f5f5;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+  }
+  
+  .toggle-btn.active {
+	background-color:  #e35125;
+	color: #fff;
+  }
+  
+  .auth-form {
+	display: flex;
+	flex-direction: column;
+  }
+  
+  .auth-form.hidden {
+	display: none;
+  }
+  
+  .auth-form h2 {
+	margin-bottom: 15px;
+  }
+  
+  .auth-form input {
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+  }
+  
+  .auth-submit {
+	background-color:  #e35125;
+	color: white;
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+  }
+  
+  .auth-submit:hover {
+	background-color:rgb(138, 53, 28);
+  }
+  

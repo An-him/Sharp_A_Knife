@@ -52,3 +52,8 @@ Thumbs.db
 
 # Emacs file
 *~
+
+*.github
+
+# Local database files
+migrations/

@@ -1,6 +1,6 @@
 from flask_restx import Namespace,Resource, fields
 from http import HTTPStatus
-from flask_jwt_extended import jwt_required, get_jwt_identity
+from flask_jwt_extended import jwt_required,get_jwt_identity
 from ..models.orders import Order
 from ..models.users import User
 from ..utils import db
@@ -13,11 +13,12 @@ order_model=order_namespace.model(
     'Order',{
         'id':fields.Integer(description='An ID'),
         'quantity':fields.Integer(required=False,description='Quantity of the order'),
-        'username':fields.String(description='User name of client'),
-        'service':fields.String(required=True,description='Service to be provided'),
-        'date_created_at':fields.DateTime(description='Date created'),
-        'order_status':fields.String(description='Status of the order',
-            enum=['BLUNT','WHETTING','SHARPENING','SHARP']),
+        'fullname':fields.String(required=True,description='Fullname of the client'),
+        'email':fields.String(required=True,description='Email of the client'),
+        'address':fields.String(required=True,description='Address of the client'),
+        'House_number':fields.String(required=True,description='House number of the client'),
+        'phone_number':fields.String(required=True,description='Phone number of the client'),
+        'date_created_at':fields.DateTime(required=True, description='Date created'),
     }
 )
 
@@ -28,16 +29,31 @@ order_status_model=order_namespace.model(
     }
 )
 
+order_status_cart=order_namespace.model(
+    'Order',{
+
+        "id": fields.Integer(description="An ID"),
+        "Fullname": fields.String(required=True, description="Client's Fullname"),
+        "email": fields.String(required=True, description="Client's email"),
+        "address": fields.String(required=True, description="Client's address"),
+        "House_number": fields.String(required=True, description="House number"),
+        "phone_number": fields.String(required=True, description="Phone number"),
+        "quantity": fields.Integer(required=True, description="Order quantity"),
+        'date_created_at':fields.DateTime(required=True, description='Date created'),
+    })
+
+
+
 order_status_models_list=order_namespace.model(
     'Order',{
         'id':fields.Integer(description='An ID'),
         'quantity':fields.Integer(required=False,description='Quantity of the order'),
-        'user_id':fields.Integer(description='User ID'),
-        'username':fields.String(description='User name of client'),
+        'Fullname':fields.String(description='Fullname of the client'),
+        'email':fields.String(description='Email of the client'),
+        'House_number':fields.String(description='House number of the client'),
+        'phone_number':fields.String(description='Phone number of the client'),
         'date_created_at':fields.DateTime(description='Date created'),
-        'service':fields.String(required=True,description='Service to be provided'),
-        'order_status':fields.String(description='Status of the order',
-            enum=['BLUNT','WHETTING','SHARPENING','SHARP']),
+        
     }
 )
 @order_namespace.route("/orders/")
@@ -57,19 +73,28 @@ class OrderGetCreate(Resource):
     @order_namespace.expect(order_model)
     @order_namespace.marshal_with(order_model)
     @order_namespace.doc(description="Place an order")
-    @jwt_required()
+    @jwt_required(optional=True)
     def post(self):
         """
             Place a new order
         """
 
         username=get_jwt_identity()
+        current_user=None
 
-        current_user=User.query.filter_by(username=username).first()
+        if username:
+            current_user=User.query.filter_by(username=username).first()
         data=order_namespace.payload
 
+        
         new_order=Order(
+            fullname=data['fullname'],
+            email=data['email'],
+            address=data['address'],
+            House_number=data['House_number'],
+            phone_number=data['phone_number'],
             quantity=data['quantity'],
+            total=data['quantity']
         )
         new_order.client=current_user
     
@@ -78,23 +103,24 @@ class OrderGetCreate(Resource):
 
         return new_order, HTTPStatus.CREATED
 
+
 @order_namespace.route("/orders/<int:order_id>")
 class GetUpdateDeleteOrder(Resource):
 
     @order_namespace.marshal_with(order_status_models_list)
     @order_namespace.doc(
-        description="Place an order",
+        description="Get an order by Id",
         params={
             'order_id':'An ID for a given order'
         }
         )
-    @jwt_required()
+    @jwt_required(optional=True)
     def get(self,order_id):
         """
             Retrieves an order by id
         """
         order=Order.get_by_id(order_id)
-        order.customer_name=order.client.username
+        order.customer_name=order.client.fullname
 
 
         return order, HTTPStatus.OK

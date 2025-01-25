@@ -85,6 +85,7 @@
               </li> -->
               <li><a href="#footer">Contact Us</a></li>
               <li><a href="tel:+250784555553" class="property-btn">Call +254 115 001965</a></li>
+              <li><a href="pages/auth.html" class="" style="font-size:xx-large"><i class="bi bi-person"></i></a>
             </ul>
           </nav>
           <!-- main menu area end --> 
@@ -102,12 +103,13 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-7">
-                <div class="slider-content s-slider-content text-left"> <span data-animation="fadeInUp" data-delay=".2s">Welcome to Sharpaknife </span>
+                <div class="slider-content s-slider-content text-left"> <span data-animation="fadeInUp" data-delay=".2s">Welcome to SharpAKnife </span>
                   <h2 data-animation="fadeInUp" data-delay=".4s">Reliable <span>Knife Sharpening</span> 
                     Services</h2>
-                    <p data-animation="fadeInUp" data-delay=".6s">We provide a seamless and professional knife sharpening experience designed to save you time and resources. With just a click or call, our skilled
-                      knife smiths deliver precision and reliability, ensuring sharper, long-lasting blades that enhance your kitchen safety and efficiency. Trust us for
-                      peace of mind and exceptional performance with every cut</p>
+                    <p data-animation="fadeInUp" data-delay=".6s">Experience the ultimate convenience and craftsmanship with our knife sharpening services.
+                       Whether at home or work, our expert knife smiths bring unmatched precision to your blades, ensuring razor-sharp edges that elevate your 
+                       cooking experience. We prioritize your satisfaction with prompt service, impeccable results, and a commitment to safety and quality. 
+                       Let us help you slice through your tasks effortlessly—your trusted partner for sharper, better-performing knives.</p>
                   <div class="slider-btn mt-40"> <a href="#services" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Read More</a>
                     <div class="btn-after" data-animation="fadeInRight" data-delay=".8s"></div>
                   </div>
@@ -119,8 +121,7 @@
         <div class="single-slider slider-bg slider-bg5 d-flex align-items-center" style="background-image:url(images/knife-sharpener\ 110726611.webp)">
           <div class="container">
             <div class="row">
-              <div class="col-lg-7">
-                <div class="slider-content s-slider-content text-left"> <span data-animation="fadeInUp" data-delay=".2s">Welcome to SharpaKnife </span>
+              <div class="col-lg-7"><div class="slider-content s-slider-content text-left"> <span data-animation="fadeInUp" data-delay=".2s">Welcome to SharpAKnife </span>
                     <h2 data-animation="fadeInUp" data-delay=".4s">Best <span>Knife</span><br> 
                       Sharpening Services</h2>
                       <p data-animation="fadeInUp" data-delay=".6s">We provide a seamless and professional knife sharpening experience designed to save you time and resources. With just a click or call, our skilled
@@ -223,7 +224,48 @@
      </div>
    </div>
 </section>
-<!-- Features Sec End -->  
+<!-- Features Sec End -->
+<!-- Place Order Start-->
+<section class="place-order" id="place-order">
+  <div class="container">
+    <div class="row">
+      <!--Order Image-->
+      <div class="image">
+        <img src="https://knifeaid.com/cdn/shop/products/KnifeDamage-Image_KnifeAid_5752733b-cdc2-40f4-b960-9d1d1d8cff0c.jpg?v=1626675541" alt="correctly sharpen knife">
+      </div>
+      <div class="order-container">
+        <div class="knife-selection">
+          <label for="knifeRange">How Many Knives?</label><br ><br ><br >
+          <input type="range" id="knifeRange" name="knifeRange" min="3" max="15" value="5" step="1" oninput="updateKnifeCount(this.value)">
+          <div class="range-numbers">
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span>10</span>
+            <span>11</span>
+            <span>12</span>
+            <span>13</span>
+            <span>14</span>
+            <span>15</span>
+          </div><br ><br >
+          <div class="knife-count">
+            <span id="knifeCount" class="knife-count-number">5</span> Knives
+          </div>
+        </div><br ><br ><br >
+        <div class="row order-btn">
+          <div class="col-lg-3 order-price">
+            <span class="price" id="price">50 </span> Ksh
+            <div>10 Ksh/Knife</div>
+        </div>
+        <div class="slider-btn-order"><input type="submit" value="Place Order" class="btn ss-btn order" onclick="placeOrder()">
+      </div>
+    </div>
+  </div>
+</section><br >  
 <!-- About Sec Start -->  
 <section class="about-sec">
   <div class="container">
@@ -248,7 +290,7 @@
             </ul>
           </div>
         </div>
-        <a href="javascript:void(0)" class="default-btn btn"> Read More </a> </div>
+        <a href="#place-order" class="default-btn btn"> Place Order </a> </div>
     </div>
     <div class="col-lg-6">
       <div class="about-imgwrap">
@@ -271,7 +313,7 @@
         <div class="part-txt text-center">
           <h3>Robust & Reliable Knife Sharpening Services</h3>
           <h2>Benefits Of a Partner</h2>
-          <p>You never have to wait for the person on the street that you are not sure about, by getting in touch with us we guarantee total satisfaction to your exxpectations. </p>
+          <p>You never have to wait for the person on the street that you are not sure about, by getting in touch with us we guarantee total satisfaction to your expectations. </p>
           <a class="def-btn btn" href="#footer">Contact Us</a> </div>
       </div>
     </div>
@@ -900,7 +942,7 @@
 </section> -->
 <!-- Blog Sec End -->
 <!-- Gallery Sec Start -->
-<section id="gallery" class="inner-content-wrapper gallery-area gallery-popup">
+<!-- <section id="gallery" class="inner-content-wrapper gallery-area gallery-popup">
   <div class="container">
     <div class="row">
       <div class="col-lg-4 col-sm-6">
@@ -929,10 +971,10 @@
       </div>
       <div class="col-lg-4 col-sm-6 offset-sm-3 offset-lg-0">
         <div class="single-gallery"> <a href="images/gallery/9.jpg"> <img src="images/gallery/9.jpg" alt=""> <i class='ti ti-search'></i> </a> </div>
-      </div>
+      </div> -->
 
       <!-- Hidden images -->
-      <div class="col-lg-4 col-sm-6 hidden-gallery">
+      <!-- <div class="col-lg-4 col-sm-6 hidden-gallery">
         <div class="single-gallery"> 
             <a href="images/gallery/10.jpg"> 
                 <img src="images/gallery/10.jpg" alt=""> 
@@ -1003,14 +1045,14 @@
                 <i class='ti ti-search'></i> 
             </a> 
         </div>
-      </div>
+      </div> -->
 
       <!-- Hidden images -->
 
-
+<!-- 
       <div class="col-12 text-center mt-3"> <a href="javascript:void(0)" class="default-btn btn">Load More</a> </div>
     </div>
-  </div>
+  </div> -->
 </section>
 <!-- Gallery Sec End -->
 <!-- Clients Wrapper Start -->
@@ -1035,9 +1077,9 @@
           <div class="footer-widget about-widget">  <h3 class="title">Contact Info</h3> 
             <p>Get in touch and hear more about our services </p>
             <ul class="contact">
-              <li><i class="fa fa-map-marker"></i> <span>1 KN 78 St Kigali, RW</span></li>
-              <li><i class="fa fa-phone"></i> <span> +250 784 555 553</span></li>
-              <li><i class="fa fa-envelope-o"></i> <span>info@edaliepc.com</span></li>
+              <li><i class="fa fa-map-marker"></i> <span>1 KN 78 St Kenya, KN</span></li>
+              <li><i class="fa fa-phone"></i> <span> +254 115 001965</span></li>
+              <li><i class="fa fa-envelope-o"></i> <span>info@sharpaknife.com</span></li>
             </ul>
             <ul class="social">
               <li><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
@@ -1081,11 +1123,12 @@
         <div class="col-lg-4 col-md-6">
           <div class="footer-widget contact-widget">
             <h3 class="title">Contact Form</h3>
-            <form>
-              <input type="text" name="name" required placeholder="Full Name">
-              <input type="text" name="email" required placeholder="Email Address">
-              <textarea name="message" required placeholder="Your Message"></textarea>
-              <button type="submit">Send</button>
+            <form id="contact-form">
+              <input type="text" name="name" id= "fullname" required placeholder="Full Name">
+              <input type="email" name="email" id= "email" required placeholder="Email Address">
+              <input type="text" name="title" id= "title" required placeholder="Subject">
+              <textarea name="message" id= "message" required placeholder="Your Message"></textarea>
+              <button type="submit" id="contact-btn">Send</button>
             </form>
           </div>
         </div>
@@ -1098,7 +1141,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <p>© Copyright <span id="year"></span> EDALI - Powered Proudly By <span class="color"><a href="https://azul-tech.co" target="_blank">AZULTECH</a></span> .</p>
+        <p>© Copyright <span id="year"></span> SHARPAKNIFE </span> </p>
       </div>
     </div>
   </div>
@@ -1123,7 +1166,9 @@
 <!-- Odometer js --> 
 <script src="js/odometer.min.js"></script>
 <!--jquery js --> 
-<script src="js/custom.js"></script> 
+<script src="js/custom.js"></script>
+<!--placeOrder js --> 
+<script src="js/placeOrder.js"></script> 
 
 </body>
 

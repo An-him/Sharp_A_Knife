@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messages Dashboard</title>
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/messages.css" />
+  </head>
+  <body>
+    <div class="loading" id="preloader">LOADING....</div>
+    <div class="container" id="mainContent">
+      <aside>
+        <div class="top">
+          <div class="logo">
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp"> close </span>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <a href="./dashboard.html" >
+            <span class="material-icons-sharp"> dashboard </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="messages.html" class="active">
+            <span class="material-icons-sharp"> mail_outline </span>
+            <h3>Messages</h3>
+            <span id="message-count"></span>
+          </a>
+          <a href="Users.html" >
+            <span class="material-icons-sharp"> person_outline </span>
+            <h3>Users</h3>
+            <span class="user-count"></span>
+          </a>
+          <a href="Orders.html">
+            <span class="material-icons-sharp"> receipt_long </span>
+            <h3>Orders</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp"> settings </span>
+            <h3>Settings</h3>
+          </a>
+          <a href="../index.html">
+            <span class="material-icons-sharp"> home </span>
+            <h3>Home</h3>
+          </a>
+          <a href="../index.html" onclick="Logout()">
+            <span class="material-icons-sharp"> logout </span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+
+      <main>
+        <h1 style="color:#e35125">Dashboard</h1>
+
+        <div class="date">
+          <input type="date" id="date" />
+        </div>
+
+        <div id="output">
+            <h2>Message LIST</h2>
+            <a href="javascript:void(0);" id="btnClearData">Data[<span id="dataCount">0</span>]</a>
+            <input type="search" id="search" placeholder="Search...">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Date</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot></tfoot>
+        </table>
+
+      </main>
+
+      <div class="right">
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons-sharp"> menu </span>
+          </button>
+          <div class="profile">
+            <div class="info">
+              <p>Hey, <b>Blaise</b></p>
+              <small class="text-muted">Admin</small>
+            </div>
+            <div class="profile-photo">
+              <img src="../assets/Passport Picture.jpg" alt="Profile Picture" style="width:80%; height: auto;padding-left: 25%;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--jquery library-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./constants/recent-order-data.js"></script>
+    <script src="./constants/update-data.js"></script>
+    <script src="./constants/sales-analytics-data.js"></script>
+    <script src="../js/messages2.js"></script>
+
+  </body>
+</html>
