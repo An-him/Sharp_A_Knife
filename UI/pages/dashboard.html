@@ -39,12 +39,12 @@
             <h3>Users</h3>
             <span id="user-count" class="count">0</span>
           </a>
-          <a href="BlogD.html">
+          <a href="orders.html">
             <span class="material-icons-sharp"> receipt_long </span>
             <h3>Orders</h3>
-            <span id="order-count" class="count">0</span>
+            <span id="order-count-side" class="count">0</span>
           </a>
-          <a href="./Blog.html">
+          <a href="../index.html">
             <span class="material-icons-sharp"> home </span>
             <h3>Home</h3>
           </a>
@@ -52,7 +52,7 @@
             <span class="material-icons-sharp"> settings </span>
             <h3>Settings</h3>
           </a>
-          <a href="./Blog.html" onclick="Logout()">
+          <a href="../index.html" onclick="Logout()">
             <span class="material-icons-sharp"> logout </span>
             <h3>Logout</h3>
           </a>
@@ -74,6 +74,8 @@
                 <th>No</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Number Of Knives</th>
+                <th>Date</th>
                 <th></th>
                 <th></th>
               </tr>
@@ -81,7 +83,7 @@
             <!-- Add tbody here | JS insertion -->
             <div style="margin-top: 15px; font-size: 20px;color:black "> <u>Messages:</u> &nbsp &nbsp &nbsp<span id="messageDataCount" style ="color:#e35125">0</span></div>
             <div style="margin-top: 15px; font-size: 20px;color:black "> <u>Blogs:</u> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<span id="blogDataCount" style ="color:#e35125">0</span></div>
-            <div style="margin-top: 15px; font-size: 20px;color:black "> <u>Orders:</u> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<span id="userDataCount" style ="color:#e35125">0</span></div>
+            <div style="margin-top: 15px; font-size: 20px;color:black "> <u>Orders:</u> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<span id="order-count" style ="color:#e35125">0</span></div>
             <div style="margin-top: 20px; font-size: 20px;color:#e35125; text-align: center; margin-bottom: 10px; "> <u>List of Orders:</u></div>
 
           </table>
@@ -129,9 +131,6 @@
     </div>
     <!--jquery library-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./constants/recent-order-data.js"></script>
-    <script src="./constants/update-data.js"></script>
-    <script src="./constants/sales-analytics-data.js"></script>
     <script src="../js/dashboard2.js"></script>
   </body>
 </html>

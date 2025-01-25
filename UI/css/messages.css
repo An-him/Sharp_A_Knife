@@ -225,6 +225,7 @@ aside .sidebar .message-count {
 /* START MAIN */
 main {
   margin-top: 1.4rem;
+  margin-right: -150px;
 }
 
 /* START DATE INPUT */
@@ -351,6 +352,8 @@ main table tbody td {
   height: 2.8rem;
   border-bottom: 1px solid var(--color-light);
   color: var(--color-dark-variant);
+  text-align: center;
+  font-size: small;
 }
 main table tbody tr:last-child td {
   border: none;
@@ -526,7 +529,7 @@ th{ font-size: 16px; background: #000; color: #fff; padding: 10px; }
 td{ padding: 5px; }
 
 #btnEditProduct{ padding: 10px; background: green; color: #fff; }
-#btnDeleteProduct{ padding: 10px; background: #f00; color: #fff;}
+#btnDeleteProduct{ padding: 10px; background: #f00; color: #fff; position: relative; z-index:99999; }
 
 #output{ display: flex; justify-content: space-between; align-items: center; margin-top: 5%; }
 

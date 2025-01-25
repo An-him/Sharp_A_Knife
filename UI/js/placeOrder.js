@@ -29,7 +29,7 @@ function updateKnifeCount(value) {
           data: JSON.stringify(formData),
           contentType: 'application/json',
           success: function(response) {
-              alert('Payment successful!');
+              alert('Message sent! We will get back to you shortly');
               $('#contact-btn').text("Sent!");
               $('#contact-btn').css("color","green");
           },
