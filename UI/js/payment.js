@@ -14,12 +14,6 @@ $(document).ready(function() {
         address: $('#address').val(),
         House_number: $('#House_number').val(),
         phone_number: $('#phone_number').val(),
-        zip: $('#zip').val(),
-        cardname: $('#cname').val(),
-        cardnumber: $('#ccard').val(),
-        expmonth: $('#expmonth').val(),
-        expyear: $('#expyear').val(),
-        cvv: $('#cvv').val(),
         quantity: quantity,
     };
     

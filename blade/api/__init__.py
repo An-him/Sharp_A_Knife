@@ -19,7 +19,7 @@ from werkzeug.exceptions import NotFound, MethodNotAllowed
 
 
 
-def create_app(config=config_dict['dev']):
+def create_app(config=config_dict['prod']):
 
     blade_dir=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     project_root=os.path.dirname(blade_dir)
@@ -29,9 +29,6 @@ def create_app(config=config_dict['dev']):
 
     
     app=Flask(__name__, static_folder=static_folder, static_url_path='')
-    print(f"Checking index.html at: {os.path.join(app.static_folder, 'index.html')}")
-    print(f"App static folder: {app.static_folder}")
-    print(f"App static url path: {app.static_url_path}")
 
 
     
@@ -59,7 +56,6 @@ def create_app(config=config_dict['dev']):
             description='REST API for Kitchen Blade Services',
             authorizations='authorizations',
             security='Bearer Auth',
-            doc='/docs',
             version='1.0',
             )
 
@@ -77,9 +73,6 @@ def create_app(config=config_dict['dev']):
     def method_not_allowed(error):
         return {'error':'Method not allowed'},405
 
-    @app.route('/test')
-    def test():
-        return {'message': 'Test route working'}, 200
 
     api.add_namespace(order_namespace, path='/orders')
     api.add_namespace(auth_namespace, path='/auth')

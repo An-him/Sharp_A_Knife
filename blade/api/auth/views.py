@@ -74,6 +74,9 @@ class SignUp(Resource):
 
 @auth_namespace.route('/login')
 class Login(Resource):
+    """
+        Login Resource: Handles all login requests
+    """
 
     @auth_namespace.expect(login_model)
     def post(self):
