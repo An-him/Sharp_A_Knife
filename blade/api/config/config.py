@@ -13,6 +13,7 @@ class Config():
     JWT_SECRET_KEY=config('JWT_SECRET_KEY')
 
 
+
 class DevConfig(Config):
     DEBUG=config('DEBUG',cast=bool)
     SQLALCHEMY_ECHO=True

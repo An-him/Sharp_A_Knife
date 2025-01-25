@@ -25,6 +25,13 @@ class ContactFormGetCreate(Resource):
     @contact_namespace.marshal_with(contact_model)
     def post(self):
         data=contact_namespace.payload
-        contact=ContactForm(**data)
+        
+        contact = ContactForm(
+            fullname=data['fullname'],
+            title=data['title'],
+            email=data['email'],
+            message=data['message']
+        )
+
         contact.save()
         return contact

@@ -7,10 +7,10 @@ from datetime import datetime
 class ContactForm(db.Model):
     __tablename__ = 'contactform'
     id=db.Column(db.Integer(), primary_key=True)
-    fullname=db.Column(db.String(255), nullable=False)
-    title=db.Column(db.String(255), nullable=False)
-    email=db.Column(db.String(255), nullable=False)
-    message=db.Column(db.String(255), nullable=False)
+    fullname=db.Column(db.String(255))
+    title=db.Column(db.String(255))
+    email=db.Column(db.String(255))
+    message=db.Column(db.String(255))
     date_created_at=db.Column(db.DateTime(),default=datetime.utcnow)
 
     def __init__(self,fullname,title,email,message):

@@ -16,7 +16,7 @@
     redirect: 'follow'
   };
   
-  fetch("http://localhost:5000/contactform", requestOptions)
+  fetch("http://localhost:5000/contact/contact/", requestOptions)
     .then(response => response.text())
     .then(result => {console.log(result), localStorage.setItem('contactData', result)})
     .catch(error => console.log('error', error));
@@ -89,6 +89,7 @@ fetchProducts = () => {
                 <td>${item.createdAt.split('T')[0]}</td>
                 <td>${item.name}</td>
                 <td>${item.email}</td>
+                <td>${item.title}</td>
                 <td>${item.subject}</td>
                 <td style="width:175px;">${item.message}</td>
                 <td style="width: 150px;">
