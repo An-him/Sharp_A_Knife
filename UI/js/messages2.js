@@ -1,31 +1,30 @@
-// Function to fetch Orders from the server
-async function fetchOrders() {
+// Function to fetch data from the server
+async function fetchMessages() {
     try {
-        const token = JSON.parse(localStorage.getItem('current_user')).access_token;
+      const token = JSON.parse(localStorage.getItem('current_user')).accessToken;
           const response = await $.ajax({
-              url: 'http://localhost:5000/orders/orders/', 
+              url: 'http://localhost:5000/contact/contact/', 
               method: 'GET',
               headers: {
-                  'Authorization': "Bearer "+token, 
+                  'authorization': token, 
                   'Content-Type': 'application/json',
               },
           });
   
       // Populate the main content with fetched data
       console.log("response",response);
-      ordersData = response
-      console.log("orders",ordersData);
+      contactData = response
 
-      ordersCount = $('#order-count');
-      ordersCount.text( ordersData ? ordersData.length : 0 );
+    //   ordersCount = $('#order-count');
+    //   ordersCount.text( ordersData ? ordersData.length : 0 );
 
       fetchData = () => {
         // empty the contents of the table
         tfoot.innerHTML = '';
         tbody.innerHTML = '';
         // reinitialize/reset/update the value of data array
-        data = ordersData
-        console.log("data", data);
+        data = contactData;
+        console.log(data);
         // Displaying the total number of products 
         dataCount.textContent = data ? data.length : 0;
         // userCount.textContent = data ? data.length : 0;
@@ -39,12 +38,11 @@ async function fetchOrders() {
                     <td>${item.date_created_at.split('T')[0]}</td>
                     <td>${item.fullname}</td>
                     <td>${item.email}</td>
-                    <td>${item.phone_number}</td>
-                    <td style="width:175px;">${item.address}</td>
-                    <td>${item.quantity}</td>
+                    <td>${item.title}</td>
+                    <td style="width:175px;">${item.message}</td>
                     <td style="width: 150px;">
                     <button type="button" id="btnEditProduct" onclick="previewUpdate(${--i});">Reply</button>
-                        <button type="button" id="btnDeleteProduct" onclick="deleteOrder(${--i});">Delete</button>
+                        <button type="button" id="btnDeleteProduct" onclick="deleteMessage(${--i});">Delete</button>
                     </td>                
                 </tr>`;
             });
@@ -70,18 +68,16 @@ async function fetchOrders() {
     fetchData()
   }
 
-
-
-// Function to delete order from the server
-async function deleteOrder(i) {
+  // Function to delete message from the server
+async function deleteMessage(i) {
     console.log(i);
     
-if(confirm('Are you sure you want to delete this order?')){
+if(confirm('Are you sure you want to delete this message?')){
 try {
     
     const token = JSON.parse(localStorage.getItem('current_user')).access_token;
         const response = await $.ajax({
-            url: `http://localhost:5000/orders/orders/${data[++i].id}`, 
+            url: `http://localhost:5000/contact/contact/${data[++i].id}`, 
             method: 'DELETE',
             headers: {
                 'Authorization': "Bearer "+token, 
@@ -98,13 +94,6 @@ try {
 }
 }
 }
-
-//Logout User
-Logout=()=>{
-    localStorage.removeItem('current_user')
-  }
-
-
   
 $(document).ready(async function () {
     const preloader = $('#preloader');
@@ -118,7 +107,7 @@ $(document).ready(async function () {
     
     
     // Fetch data and hide preloader when done
-    await fetchOrders();
+    await fetchMessages();
     
     
     // Hide preloader and show main content
