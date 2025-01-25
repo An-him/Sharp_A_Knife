@@ -56,15 +56,15 @@ class SignUp(Resource):
         data = request.get_json()
 
         try:
-            
             new_user = User(
                 fullname=data.get('fullname'),
                 email=data.get('email'),
                 password=generate_password_hash(data.get('password')),
                 )
             new_user.save_user()
-        
+
             return new_user, HTTPStatus.CREATED
+
         except Exception as e:
             raise Conflict(
                 f"User with email {data.get('email')} already exists") from e
