@@ -17,75 +17,60 @@ from flask_migrate import Migrate
 from werkzeug.exceptions import NotFound, MethodNotAllowed
 
 
-
-
 def create_app(config=config_dict['prod']):
     """
         Create a Flask app using the app factory pattern
     """
+    app = Flask(__name__)
 
-
-    app=Flask(__name__)
-
-
-    
     CORS(app)
-
-
 
     app.config.from_object(config)
 
     db.init_app(app)
 
-    
-
-    authorizations={
-        "Bearer Auth":{
-            'type':'apiKey',
-            'in':'header',
-            'name':'Authorization',
-            'description':'Add a JWT Authorization ** Bearer &lt;JWT&gt; to authoirize'
+    authorizations = {
+        "Bearer Auth": {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'Authorization',
+            'description':
+            'Add a JWT Authorization ** Bearer &lt;JWT&gt; to authoirize'
         }
     }
 
-    api=Api(app,
-            title='SharpAKnife API',
-            description='REST API for Kitchen Blade Services',
-            authorizations='authorizations',
-            security='Bearer Auth',
-            version='1.0',
-            )
+    api = Api(app,
+              title='SharpAKnife API',
+              description='REST API for'
+              'SharpaKnife: A Professional Knife Sharpening  Services',
+              authorizations=authorizations,
+              security='Bearer Auth',
+              version='1.0',
+              )
 
-    jwt=JWTManager(app)
-    migrate=Migrate(app, db)
-
-
+    jwt = JWTManager(app)
+    migrate = Migrate(app, db)
 
     @api.errorhandler(NotFound)
     def not_found(error):
-        return {'error':'Not found'},404
-
+        return {'error': 'Not found'}, 404
 
     @api.errorhandler(MethodNotAllowed)
     def method_not_allowed(error):
-        return {'error':'Method not allowed'},405
-
+        return {'error': 'Method not allowed'}, 405
 
     api.add_namespace(order_namespace, path='/orders')
     api.add_namespace(auth_namespace, path='/auth')
     api.add_namespace(contact_namespace, path='/contact')
     api.add_namespace(users_namespace, path='/users')
 
-
-
-
     @app.shell_context_processor
     def make_shell_context():
         return {
-            'db':db,
-            'User':User,
-            'Order':Order,
-            'Contact':Contact,
+            'db': db,
+            'User': User,
+            'Order': Order,
+            'Contact': ContactForm,
         }
 
-    return app  
+    return app
