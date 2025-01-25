@@ -97,7 +97,7 @@ try {
     // dataContainer.html(`<p style="color: red;">Error fetching data: ${error.statusText}</p>`);
 }
 }
-}
+};
 
 //Logout User
 Logout=()=>{

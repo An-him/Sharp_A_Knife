@@ -35,13 +35,13 @@ $(document).ready(function() {
                 
                 setTimeout(() => {
                     location.href = "dashboard.html"
-                }, 2000); 
+                }, 1000); 
 
             },
             error: function(error) {
                 $('#auth-btn').text("Error");
                 $('#auth-btn').css("color","yellow");
-                alert('An error occurred during Log In. Please try again.'); 
+                alert(`An error occurred during Log In. ${error} Please try again.`); 
             }
           });
         });
@@ -66,9 +66,10 @@ $(document).ready(function() {
             },
             
             error: function(error) {
+                console.log(error.responseJSON, error.responseText);
                 $('#auth-btn').text("Error");
                 $('#auth-btn').css("color","yellow");
-                alert('An error occurred during checkout. Please try again.'); 
+                alert(`${error.responseJSON.message}! Please try again.`); 
             },
             
             });
