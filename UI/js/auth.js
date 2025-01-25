@@ -35,13 +35,13 @@ $(document).ready(function() {
                 
                 setTimeout(() => {
                     location.href = "dashboard.html"
-                }, 2000); 
+                }, 1000); 
 
             },
             error: function(error) {
                 $('#auth-btn').text("Error");
                 $('#auth-btn').css("color","yellow");
-                alert('An error occurred during Log In. Please try again.'); 
+                alert(`${error.responseJSON.message}! Please try again.`); 
             }
           });
         });
@@ -53,6 +53,7 @@ $(document).ready(function() {
             email: $('#signup-email').val(),
             password: $('#signup-password').val(),
         };
+        $('#auth-btn-s').text("Registering...");
     
         $.ajax({
             type: 'POST',
@@ -60,15 +61,16 @@ $(document).ready(function() {
             data: JSON.stringify(formData),
             contentType: 'application/json',
             success: function(response) {
-                $('#auth-btn').text("Signed In Successfully");
-                $('#auth-btn').css("color","green");
+                $('#auth-btn-s').text("Signed In Successfully");
+                $('#auth-btn-s').css("color","green");
                 alert('SignUp successful! Please Proceed to login');
             },
             
             error: function(error) {
-                $('#auth-btn').text("Error");
-                $('#auth-btn').css("color","yellow");
-                alert('An error occurred during checkout. Please try again.'); 
+                console.log(error.responseJSON, error.responseText);
+                $('#auth-bt-sn').text("Error");
+                $('#auth-btn-s').css("color","yellow");
+                alert(`${error.responseJSON.message}! Please try again.`); 
             },
             
             });

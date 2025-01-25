@@ -3,7 +3,7 @@ async function fetchMessages() {
     try {
       const token = JSON.parse(localStorage.getItem('current_user')).accessToken;
           const response = await $.ajax({
-              url: 'http://localhost:5000/contact/contact/', 
+              url: 'http://localhost:5000/users/users/', 
               method: 'GET',
               headers: {
                   'authorization': token, 
@@ -35,14 +35,14 @@ async function fetchMessages() {
                 // displaying the data in the body of the table
                 tbody.innerHTML += `<tr>
                     <td>${++i}</td>
-                    <td>${item.date_created_at.split('T')[0]}</td>
+                    <td>${item.date_created.split('T')[0]}</td>
                     <td>${item.fullname}</td>
                     <td>${item.email}</td>
-                    <td>${item.title}</td>
-                    <td style="width:175px;">${item.message}</td>
+                    <td>${item.is_active}</td>
+                    <td style="width:175px;">${item.is_staff}</td>
                     <td style="width: 150px;">
-                    <button type="button" id="btnEditProduct" onclick="previewUpdate(${--i});">Reply</button>
-                        <button type="button" id="btnDeleteProduct" onclick="deleteMessage(${--i});">Delete</button>
+                    <button type="button" id="btnEditProduct" onclick="previewUpdate(${--i});">Update</button>
+                        <button type="button" id="btnDeleteProduct" onclick="deleteUser(${--i});">Delete</button>
                     </td>                
                 </tr>`;
             });
@@ -68,8 +68,8 @@ async function fetchMessages() {
     fetchData()
   }
 
-// Function to delete message from the server
-async function deleteMessage(i) {
+  // Function to delete message from the server
+async function deleteUser(i) {
     console.log(i);
     
 if(confirm('Are you sure you want to delete this message?')){
@@ -77,7 +77,7 @@ try {
     
     const token = JSON.parse(localStorage.getItem('current_user')).access_token;
         const response = await $.ajax({
-            url: `http://localhost:5000/contact/contact/${data[++i].id}`, 
+            url: `http://localhost:5000/users/users/${data[++i].id}`, 
             method: 'DELETE',
             headers: {
                 'Authorization': "Bearer "+token, 
