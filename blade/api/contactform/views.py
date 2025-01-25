@@ -10,6 +10,7 @@ contact_model=contact_namespace.model(
         'title':fields.String(required=True,description='Title of the message'),
         'email':fields.String(required=True,description='Email of the client'),
         'message':fields.String(required=True,description='Message of the client'),
+        'date_created_at':fields.DateTime(required=True, description='Date created'),
     }
 )
 

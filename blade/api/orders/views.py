@@ -18,7 +18,7 @@ order_model=order_namespace.model(
         'address':fields.String(required=True,description='Address of the client'),
         'House_number':fields.String(required=True,description='House number of the client'),
         'phone_number':fields.String(required=True,description='Phone number of the client'),
-        
+        'date_created_at':fields.DateTime(required=True, description='Date created'),
     }
 )
 
@@ -39,6 +39,7 @@ order_status_cart=order_namespace.model(
         "House_number": fields.String(required=True, description="House number"),
         "phone_number": fields.String(required=True, description="Phone number"),
         "quantity": fields.Integer(required=True, description="Order quantity"),
+        'date_created_at':fields.DateTime(required=True, description='Date created'),
     })
 
 
