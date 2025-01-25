@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Welcome, {{ username }}</h1>
+        <div class="profile-details">
+            <h2>User Details</h2>
+            <p><strong>Email:</strong> {{ email }}</p>
+            <p><strong>Location:</strong> {{ location }}</p>
+            <p><strong>Member since:</strong> {{ created_at }}</p>
+        </div>
+
+        <div class="order-history">
+            <h2>Order History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Service</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Date Created</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td>{{ order.order_id }}</td>
+                        <td>{{ order.service }}</td>
+                        <td>{{ order.quantity }}</td>
+                        <td>{{ order.total }}</td>
+                        <td>{{ order.date_created_at }}</td>
+                        <td>{{ order.order_status }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+
