@@ -20,15 +20,12 @@ from werkzeug.exceptions import NotFound, MethodNotAllowed
 
 
 def create_app(config=config_dict['prod']):
+    """
+        Create a Flask app using the app factory pattern
+    """
 
-    blade_dir=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    project_root=os.path.dirname(blade_dir)
 
-
-    static_folder = os.path.join(project_root, 'UI')
-
-    
-    app=Flask(__name__, static_folder=static_folder, static_url_path='')
+    app=Flask(__name__)
 
 
     
@@ -80,14 +77,6 @@ def create_app(config=config_dict['prod']):
     api.add_namespace(users_namespace, path='/users')
 
 
-
-    @app.route("/")
-    def index():
-        try:
-            return app.send_from_directory(app.static_folder, 'index.html')
-        except Exception as e:
-            print(f"Error serving index.html: {str(e)}")
-            return {"error": str(e)}, 500
 
 
     @app.shell_context_processor
