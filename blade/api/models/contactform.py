@@ -13,7 +13,7 @@ class ContactForm(db.Model):
     message=db.Column(db.String(255), nullable=False)
     date_created_at=db.Column(db.DateTime(),default=datetime.utcnow)
 
-    def __init__(self,fullname,email,message):
+    def __init__(self,fullname,title,email,message):
         self.fullname=fullname
         self.title=title
         self.email=email

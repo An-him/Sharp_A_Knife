@@ -18,3 +18,12 @@ class ContactFormGetCreate(Resource):
     @contact_namespace.marshal_with(contact_model)
     def get(self):
         return ContactForm.query.all()
+
+    
+    @contact_namespace.expect(contact_model)
+    @contact_namespace.marshal_with(contact_model)
+    def post(self):
+        data=contact_namespace.payload
+        contact=ContactForm(**data)
+        contact.save()
+        return contact
